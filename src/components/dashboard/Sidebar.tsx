@@ -26,6 +26,10 @@ import {
   Clock,
   Star,
   Webhook,
+  Store,
+  Megaphone,
+  HeartHandshake,
+  Code2,
 } from "lucide-react"
 
 import {
@@ -44,13 +48,18 @@ import {
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { useGhostMode } from "@/hooks/useGhostMode"
 
-const mainNavItems = [
+// Overview section - Quick access to main dashboard
+const overviewItems = [
   {
     title: "Dashboard",
     url: "/dashboard",
     icon: LayoutDashboard,
-    exactMatch: true, // Only highlight on exact match, not sub-routes
+    exactMatch: true,
   },
+]
+
+// Store section - Products, courses, orders
+const storeItems = [
   {
     title: "Products",
     url: "/dashboard/products",
@@ -60,11 +69,6 @@ const mainNavItems = [
     title: "Courses",
     url: "/dashboard/courses",
     icon: GraduationCap,
-  },
-  {
-    title: "My Learning",
-    url: "/dashboard/learn",
-    icon: BookOpen,
   },
   {
     title: "Orders",
@@ -77,23 +81,28 @@ const mainNavItems = [
     icon: Tag,
   },
   {
-    title: "Certificates",
-    url: "/dashboard/certificates",
-    icon: Award,
-  },
-  {
     title: "Reviews",
     url: "/dashboard/reviews",
     icon: Star,
   },
 ]
 
-const growthItems = [
+// Learning section - Student experience
+const learningItems = [
   {
-    title: "Bookings",
-    url: "/dashboard/bookings",
-    icon: Calendar,
+    title: "My Learning",
+    url: "/dashboard/learn",
+    icon: BookOpen,
   },
+  {
+    title: "Certificates",
+    url: "/dashboard/certificates",
+    icon: Award,
+  },
+]
+
+// Marketing section - Growth tools
+const marketingItems = [
   {
     title: "Email Marketing",
     url: "/dashboard/email",
@@ -103,16 +112,6 @@ const growthItems = [
     title: "Email Templates",
     url: "/dashboard/email-templates",
     icon: FileText,
-  },
-  {
-    title: "Community",
-    url: "/dashboard/community",
-    icon: Users,
-  },
-  {
-    title: "Coaching",
-    url: "/dashboard/coaching",
-    icon: Video,
   },
   {
     title: "Instagram AutoDMs",
@@ -134,14 +133,29 @@ const growthItems = [
     url: "/dashboard/waitlist",
     icon: Clock,
   },
+]
+
+// Community & Services section
+const communityItems = [
   {
-    title: "Webhooks",
-    url: "/dashboard/webhooks",
-    icon: Webhook,
+    title: "Community",
+    url: "/dashboard/community",
+    icon: Users,
+  },
+  {
+    title: "Coaching",
+    url: "/dashboard/coaching",
+    icon: Video,
+  },
+  {
+    title: "Bookings",
+    url: "/dashboard/bookings",
+    icon: Calendar,
   },
 ]
 
-const dataItems = [
+// Insights section - Analytics and AI
+const insightsItems = [
   {
     title: "Analytics",
     url: "/dashboard/analytics",
@@ -151,6 +165,15 @@ const dataItems = [
     title: "AI Insights",
     url: "/dashboard/insights",
     icon: Lightbulb,
+  },
+]
+
+// Developer section - Technical integrations
+const developerItems = [
+  {
+    title: "Webhooks",
+    url: "/dashboard/webhooks",
+    icon: Webhook,
   },
 ]
 
@@ -186,11 +209,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
 
       <SidebarContent>
+        {/* Overview Section */}
         <SidebarGroup>
-          <SidebarGroupLabel>Store</SidebarGroupLabel>
+          <SidebarGroupLabel>Overview</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {mainNavItems.map((item) => (
+              {overviewItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     asChild
@@ -208,11 +232,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroupContent>
         </SidebarGroup>
 
+        {/* Store Section */}
         <SidebarGroup>
-          <SidebarGroupLabel>Growth</SidebarGroupLabel>
+          <SidebarGroupLabel>Store</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {growthItems.map((item) => (
+              {storeItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     asChild
@@ -230,11 +255,104 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroupContent>
         </SidebarGroup>
 
+        {/* Learning Section */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Learning</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {learningItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname === item.url || pathname.startsWith(item.url + '/')}
+                    tooltip={item.title}
+                  >
+                    <Link href={item.url}>
+                      <item.icon className="size-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Marketing Section */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Marketing</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {marketingItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname === item.url || pathname.startsWith(item.url + '/')}
+                    tooltip={item.title}
+                  >
+                    <Link href={item.url}>
+                      <item.icon className="size-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Community & Services Section */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Community & Services</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {communityItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname === item.url || pathname.startsWith(item.url + '/')}
+                    tooltip={item.title}
+                  >
+                    <Link href={item.url}>
+                      <item.icon className="size-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Insights Section */}
         <SidebarGroup>
           <SidebarGroupLabel>Insights</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {dataItems.map((item) => (
+              {insightsItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={pathname === item.url}
+                    tooltip={item.title}
+                  >
+                    <Link href={item.url}>
+                      <item.icon className="size-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* Developer Section */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Developer</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {developerItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     asChild
