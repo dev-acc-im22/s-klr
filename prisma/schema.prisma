@@ -1,0 +1,1109 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum Role {
+  CREATOR
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  COMPLETED
+  REFUNDED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum EmailStatus {
+  DRAFT
+  SCHEDULED
+  SENT
+}
+
+enum PostType {
+  TEXT
+  IMAGE
+  VIDEO
+  ANNOUNCEMENT
+}
+
+enum DripType {
+  immediate // Available immediately upon enrollment
+  scheduled // Available on a specific date
+  after_previous // Available X days after previous module completion
+}
+
+enum EmailTemplateType {
+  WELCOME
+  PURCHASE_CONFIRMATION
+  COURSE_ENROLLMENT
+  ABANDONED_CART
+  RECOVERY
+  NEWSLETTER
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+}
+
+enum DomainStatus {
+  PENDING    // Domain added but not yet verified
+  VERIFYING  // DNS verification in progress
+  VERIFIED   // Domain verified, ready for SSL
+  ACTIVE     // Domain is live with SSL
+  FAILED     // Verification or SSL provisioning failed
+}
+
+// ============================================
+// USER & AUTH MODELS
+// ============================================
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  username      String    @unique
+  password      String?
+  image         String?
+  bio           String?
+  coverImage    String?
+  role          Role      @default(CREATOR)
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  products             Product[]
+  orders               Order[]
+  courses              Course[]
+  enrollments          Enrollment[]
+  socialLinks          SocialLink[]
+  storeSettings        StoreSettings?
+  accounts             Account[]
+  sessions             Session[]
+  bookings             Booking[]
+  availability         AvailabilitySlot[]
+  emailSubscribers     EmailSubscriber[]
+  emailCampaigns       EmailCampaign[]
+  communityPosts       CommunityPost[]
+  communityComments    CommunityComment[]
+  postLikes            PostLike[]
+  coachingSessions     CoachingSession[]
+  instagramAutomations InstagramAutomation[]
+  quizAttempts         QuizAttempt[]
+  affiliateProgram     AffiliateProgram?
+  affiliates           Affiliate[]
+  discountCodes        DiscountCode[]
+  emailTemplates       EmailTemplate[]
+  waitlists            Waitlist[]
+  webhooks             Webhook[]
+  reviews              Review[]
+  reviewReplies        ReviewReply[]
+  reviewVotes          ReviewVote[]
+  customDomains        CustomDomain[]
+
+  @@index([email])
+  @@index([username])
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// ============================================
+// PRODUCT MODELS
+// ============================================
+
+model Product {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  price       Float
+  images      String   @default("")
+  files       String   @default("")
+  category    String?
+  featured    Boolean  @default(false)
+  published   Boolean  @default(false)
+  salesCount  Int      @default(0)
+  
+  // Launch mode settings
+  launchMode       Boolean   @default(false)
+  launchDate       DateTime?
+  earlyBirdPrice   Float?
+  earlyBirdEndDate DateTime?
+  waitlistEnabled  Boolean   @default(false)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  creatorId  String
+  creator    User        @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  orderItems OrderItem[]
+  cartItems  CartItem[]
+
+  // Upsell relations
+  upsellOffers       UpsellOffer[]  @relation("UpsellProduct")
+  upsellOfferProducts UpsellOffer[]  @relation("UpsellOfferProduct")
+
+  // Cross-sell relations
+  crossSellProducts      CrossSellProduct[] @relation("CrossSellMain")
+  crossSellRelatedProducts CrossSellProduct[] @relation("CrossSellRelated")
+
+  @@index([creatorId])
+  @@index([published])
+  @@index([launchMode])
+  @@map("products")
+}
+
+// ============================================
+// ORDER MODELS
+// ============================================
+
+model Order {
+  id            String      @id @default(cuid())
+  status        OrderStatus @default(PENDING)
+  total         Float
+  currency      String      @default("USD")
+  paymentMethod String?
+  paymentId     String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  buyerId String
+  buyer   User        @relation(fields: [buyerId], references: [id], onDelete: Cascade)
+  items   OrderItem[]
+
+  @@index([buyerId])
+  @@index([status])
+  @@map("orders")
+}
+
+model OrderItem {
+  id       String @id @default(cuid())
+  quantity Int    @default(1)
+  price    Float
+
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([productId])
+  @@map("order_items")
+}
+
+// ============================================
+// COURSE MODELS
+// ============================================
+
+model Course {
+  id              String   @id @default(cuid())
+  title           String
+  description     String?
+  image           String?
+  price           Float
+  published       Boolean  @default(false)
+  enrollmentCount Int      @default(0)
+  rating          Float    @default(0)
+  
+  // Launch mode settings
+  launchMode       Boolean   @default(false)
+  launchDate       DateTime?
+  earlyBirdPrice   Float?
+  earlyBirdEndDate DateTime?
+  waitlistEnabled  Boolean   @default(false)
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  creatorId   String
+  creator     User         @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  modules     Module[]
+  enrollments Enrollment[]
+
+  @@index([creatorId])
+  @@index([published])
+  @@index([launchMode])
+  @@map("courses")
+}
+
+model Module {
+  id    String @id @default(cuid())
+  title String
+  order Int    @default(0)
+
+  // Drip content settings
+  dripType DripType  @default(immediate)
+  dripDate DateTime? // For scheduled drip - the date when module becomes available
+  dripDays Int? // For after_previous drip - days after enrollment or previous module
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  courseId String
+  course   Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessons  Lesson[]
+
+  @@index([courseId])
+  @@index([dripType])
+  @@map("modules")
+}
+
+model Lesson {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  videoUrl    String?
+  videoType   String? // youtube, vimeo, upload
+  duration    Int? // in seconds
+  order       Int      @default(0)
+  preview     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  moduleId String
+  module   Module           @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  progress LessonProgress[]
+  quiz     Quiz?
+
+  @@index([moduleId])
+  @@map("lessons")
+}
+
+// ============================================
+// QUIZ/ASSESSMENT MODELS
+// ============================================
+
+model Quiz {
+  id           String   @id @default(cuid())
+  title        String
+  passingScore Int      @default(70) // percentage required to pass
+  maxAttempts  Int      @default(3) // 0 = unlimited
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  lessonId  String         @unique
+  lesson    Lesson         @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  questions QuizQuestion[]
+  attempts  QuizAttempt[]
+
+  @@index([lessonId])
+  @@map("quizzes")
+}
+
+model QuizQuestion {
+  id            String   @id @default(cuid())
+  question      String
+  options       String // JSON array of 4 options
+  correctAnswer Int // index of correct answer (0-3)
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  quizId String
+  quiz   Quiz   @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  @@index([quizId])
+  @@map("quiz_questions")
+}
+
+model QuizAttempt {
+  id          String   @id @default(cuid())
+  score       Int // percentage score
+  passed      Boolean  @default(false)
+  answers     String // JSON array of selected answers
+  completedAt DateTime @default(now())
+
+  quizId String
+  quiz   Quiz   @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([quizId, userId]) // One attempt per user per quiz (for simplicity, could be changed for multiple attempts)
+  @@index([quizId])
+  @@index([userId])
+  @@index([passed])
+  @@map("quiz_attempts")
+}
+
+// ============================================
+// ENROLLMENT & PROGRESS MODELS
+// ============================================
+
+model Enrollment {
+  id          String    @id @default(cuid())
+  progress    Float     @default(0) // percentage 0-100
+  enrolledAt  DateTime  @default(now())
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  userId         String
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId       String
+  course         Course           @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessonProgress LessonProgress[]
+  certificate    Certificate?
+
+  @@unique([userId, courseId])
+  @@index([userId])
+  @@index([courseId])
+  @@map("enrollments")
+}
+
+model LessonProgress {
+  id            String    @id @default(cuid())
+  watchedSeconds Int      @default(0) // Total seconds watched
+  lastPosition   Int      @default(0) // Last playback position in seconds
+  completed     Boolean   @default(false)
+  completedAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  enrollmentId String
+  enrollment   Enrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+  lessonId     String
+  lesson       Lesson     @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([enrollmentId, lessonId])
+  @@index([enrollmentId])
+  @@index([lessonId])
+  @@map("lesson_progress")
+}
+
+// ============================================
+// BOOKING & CALENDAR MODELS
+// ============================================
+
+model Booking {
+  id          String        @id @default(cuid())
+  title       String
+  description String?
+  status      BookingStatus @default(PENDING)
+  startTime   DateTime
+  endTime     DateTime
+  timezone    String        @default("UTC")
+  meetingUrl  String?
+  notes       String?
+  price       Float         @default(0)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  @@index([creatorId])
+  @@index([status])
+  @@index([startTime])
+  @@map("bookings")
+}
+
+model AvailabilitySlot {
+  id        String   @id @default(cuid())
+  dayOfWeek Int // 0 = Sunday, 6 = Saturday
+  startTime String // HH:mm format
+  endTime   String // HH:mm format
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  @@index([creatorId])
+  @@map("availability_slots")
+}
+
+// ============================================
+// EMAIL MARKETING MODELS
+// ============================================
+
+model EmailSubscriber {
+  id             String    @id @default(cuid())
+  email          String
+  name           String?
+  isActive       Boolean   @default(true)
+  subscribedAt   DateTime  @default(now())
+  unsubscribedAt DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  @@unique([creatorId, email])
+  @@index([creatorId])
+  @@map("email_subscribers")
+}
+
+model EmailCampaign {
+  id             String      @id @default(cuid())
+  subject        String
+  content        String // HTML content
+  status         EmailStatus @default(DRAFT)
+  scheduledAt    DateTime?
+  sentAt         DateTime?
+  recipientCount Int         @default(0)
+  openCount      Int         @default(0)
+  clickCount     Int         @default(0)
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  @@index([creatorId])
+  @@index([status])
+  @@map("email_campaigns")
+}
+
+model EmailTemplate {
+  id        String            @id @default(cuid())
+  type      EmailTemplateType
+  subject   String
+  body      String            // HTML content with variable placeholders
+  variables String            // JSON array of available variables like ["name", "product", "price"]
+  isActive  Boolean           @default(true)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([type])
+  @@unique([userId, type]) // One template per type per user
+  @@map("email_templates")
+}
+
+// ============================================
+// COMMUNITY MODELS
+// ============================================
+
+model CommunityPost {
+  id           String   @id @default(cuid())
+  title        String
+  content      String
+  type         PostType @default(TEXT)
+  imageUrl     String?
+  videoUrl     String?
+  videoType    String? // youtube, vimeo
+  isPinned     Boolean  @default(false)
+  isLocked     Boolean  @default(false)
+  isMemberOnly Boolean  @default(false)
+  viewCount    Int      @default(0)
+  likeCount    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  creatorId String
+  creator   User               @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  comments  CommunityComment[]
+  likes     PostLike[]
+
+  @@index([creatorId])
+  @@index([isPinned])
+  @@index([type])
+  @@map("community_posts")
+}
+
+model CommunityComment {
+  id        String   @id @default(cuid())
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  postId   String
+  post     CommunityPost      @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId String
+  author   User               @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  parentId String?
+  parent   CommunityComment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies  CommunityComment[] @relation("CommentReplies")
+
+  @@index([postId])
+  @@index([authorId])
+  @@index([parentId])
+  @@map("community_comments")
+}
+
+model PostLike {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  postId String
+  post   CommunityPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  userId String
+  user   User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, userId])
+  @@index([postId])
+  @@index([userId])
+  @@map("post_likes")
+}
+
+// ============================================
+// COACHING SESSION MODELS
+// ============================================
+
+model CoachingSession {
+  id           String        @id @default(cuid())
+  title        String
+  description  String?
+  status       BookingStatus @default(PENDING)
+  scheduledAt  DateTime
+  duration     Int           @default(60) // in minutes
+  price        Float
+  meetingUrl   String?
+  notes        String?
+  recordingUrl String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  @@index([creatorId])
+  @@index([status])
+  @@index([scheduledAt])
+  @@map("coaching_sessions")
+}
+
+// ============================================
+// INSTAGRAM AUTODMS MODELS
+// ============================================
+
+model InstagramAutomation {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String
+  triggerType String // NEW_FOLLOWER, KEYWORD_MENTION, STORY_REPLY, COMMENT
+  keywords    String? // JSON array for keywords
+  message     String
+  delay       Int      @default(0) // minutes
+  isActive    Boolean  @default(true)
+  sentCount   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([isActive])
+  @@map("instagram_automations")
+}
+
+// ============================================
+// AFFILIATE PROGRAM MODELS
+// ============================================
+
+model AffiliateProgram {
+  id             String   @id @default(cuid())
+  creatorId      String   @unique
+  commissionRate Float    @default(10) // Percentage (e.g., 10 = 10%)
+  cookieDuration Int      @default(30) // Days
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  creator    User        @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  affiliates Affiliate[]
+
+  @@index([creatorId])
+  @@index([isActive])
+  @@map("affiliate_programs")
+}
+
+model Affiliate {
+  id          String   @id @default(cuid())
+  programId   String
+  userId      String
+  code        String   @unique // Custom affiliate code
+  clicks      Int      @default(0)
+  conversions Int      @default(0)
+  earnings    Float    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  program     AffiliateProgram @relation(fields: [programId], references: [id], onDelete: Cascade)
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clickEvents AffiliateClick[]
+  sales       AffiliateSale[]
+
+  @@index([programId])
+  @@index([userId])
+  @@index([code])
+  @@map("affiliates")
+}
+
+model AffiliateClick {
+  id          String   @id @default(cuid())
+  affiliateId String
+  productId   String?
+  visitorIp   String
+  userAgent   String?
+  createdAt   DateTime @default(now())
+
+  affiliate Affiliate @relation(fields: [affiliateId], references: [id], onDelete: Cascade)
+
+  @@index([affiliateId])
+  @@index([createdAt])
+  @@map("affiliate_clicks")
+}
+
+model AffiliateSale {
+  id          String   @id @default(cuid())
+  affiliateId String
+  orderId     String?
+  commission  Float
+  status      String   @default("PENDING") // PENDING, APPROVED, PAID
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  affiliate Affiliate @relation(fields: [affiliateId], references: [id], onDelete: Cascade)
+
+  @@index([affiliateId])
+  @@index([status])
+  @@map("affiliate_sales")
+}
+
+// ============================================
+// ABANDONED CART RECOVERY MODELS
+// ============================================
+
+model Cart {
+  id        String   @id @default(cuid())
+  sessionId String   @unique
+  email     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  items         CartItem[]
+  abandonedCart AbandonedCart?
+
+  @@index([sessionId])
+  @@index([email])
+  @@map("carts")
+}
+
+model CartItem {
+  id       String   @id @default(cuid())
+  quantity Int      @default(1)
+  addedAt  DateTime @default(now())
+
+  cartId    String
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([cartId])
+  @@index([productId])
+  @@map("cart_items")
+}
+
+model AbandonedCart {
+  id                  String    @id @default(cuid())
+  email               String
+  recoveryEmailSentAt DateTime?
+  recoveredAt         DateTime?
+  status              String    @default("pending") // pending, email_sent, recovered, expired
+  discountCode        String?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  cartId         String          @unique
+  cart           Cart            @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  recoveryEmails RecoveryEmail[]
+
+  @@index([email])
+  @@index([status])
+  @@map("abandoned_carts")
+}
+
+model RecoveryEmail {
+  id        String    @id @default(cuid())
+  sentAt    DateTime  @default(now())
+  openedAt  DateTime?
+  clickedAt DateTime?
+
+  abandonedCartId String
+  abandonedCart   AbandonedCart @relation(fields: [abandonedCartId], references: [id], onDelete: Cascade)
+
+  @@index([abandonedCartId])
+  @@map("recovery_emails")
+}
+
+// ============================================
+// CERTIFICATE MODELS
+// ============================================
+
+model Certificate {
+  id               String   @id @default(cuid())
+  enrollmentId     String   @unique
+  certificateNumber String   @unique
+  issuedAt         DateTime @default(now())
+  downloadUrl      String?
+
+  enrollment Enrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+
+  @@index([enrollmentId])
+  @@index([certificateNumber])
+  @@map("certificates")
+}
+
+// ============================================
+// STORE CUSTOMIZATION MODELS
+// ============================================
+
+model SocialLink {
+  id        String   @id @default(cuid())
+  platform  String // instagram, twitter, youtube, tiktok, etc.
+  url       String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("social_links")
+}
+
+model StoreSettings {
+  id           String   @id @default(cuid())
+  theme        String   @default("blue")
+  primaryColor String   @default("#2563eb")
+  darkMode     Boolean  @default(false)
+  customCss    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  userId         String  @unique
+  user           User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  customDomainId String? @unique
+  customDomain   CustomDomain? @relation(fields: [customDomainId], references: [id], onDelete: SetNull)
+
+  @@map("store_settings")
+}
+
+// ============================================
+// CUSTOM DOMAIN MODELS
+// ============================================
+
+model CustomDomain {
+  id          String       @id @default(cuid())
+  userId      String
+  domain      String       @unique
+  status      DomainStatus @default(PENDING)
+  verifiedAt  DateTime?
+  sslEnabled  Boolean      @default(false)
+  isPrimary   Boolean      @default(false)
+  wwwRedirect Boolean      @default(true) // Redirect www to non-www
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  storeSettings StoreSettings?
+
+  @@index([userId])
+  @@index([domain])
+  @@index([status])
+  @@map("custom_domains")
+}
+
+// ============================================
+// UPSELL & CROSS-SELL MODELS
+// ============================================
+
+enum UpsellType {
+  ONE_CLICK   // One-click upsell after purchase
+  ORDER_BUMP  // Add-on at checkout
+  BUNDLE      // Frequently bought together
+}
+
+model UpsellOffer {
+  id             String     @id @default(cuid())
+  productId      String     // The product that triggers this upsell
+  title          String
+  description    String?
+  discountPrice  Float      // Special price for the upsell
+  discountType   String     @default("fixed") // fixed, percentage
+  upsellType     UpsellType @default(ONE_CLICK)
+  offerProductId String     // The product being offered as upsell
+  triggerTiming  String     @default("after_purchase") // after_purchase, during_checkout
+  displayOrder   Int        @default(0)
+  active         Boolean    @default(true)
+  abTestVariant  String?    // For A/B testing (e.g., "A", "B", "control")
+  conversionRate Float      @default(0)
+  impressions    Int        @default(0)
+  conversions    Int        @default(0)
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  product      Product  @relation("UpsellProduct", fields: [productId], references: [id], onDelete: Cascade)
+  offerProduct Product  @relation("UpsellOfferProduct", fields: [offerProductId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([offerProductId])
+  @@index([active])
+  @@index([upsellType])
+  @@map("upsell_offers")
+}
+
+model CrossSellProduct {
+  id              String   @id @default(cuid())
+  productId       String   // The main product
+  relatedProductId String  // The related/cross-sell product
+  displayOrder    Int      @default(0)
+  active          Boolean  @default(true)
+  bundlePrice     Float?   // Special price when bought together
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  product       Product @relation("CrossSellMain", fields: [productId], references: [id], onDelete: Cascade)
+  relatedProduct Product @relation("CrossSellRelated", fields: [relatedProductId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, relatedProductId])
+  @@index([productId])
+  @@index([relatedProductId])
+  @@index([active])
+  @@map("cross_sell_products")
+}
+
+// ============================================
+// WAITLIST / LAUNCH MODE MODELS
+// ============================================
+
+enum WaitlistSource {
+  DIRECT
+  SOCIAL
+  REFERRAL
+  EMAIL
+  ADS
+  OTHER
+}
+
+model Waitlist {
+  id        String          @id @default(cuid())
+  email     String
+  name      String?
+  source    WaitlistSource  @default(DIRECT)
+  referrer  String?         // Referral code or affiliate code
+  notified  Boolean         @default(false) // Whether launch notification was sent
+  createdAt DateTime        @default(now())
+
+  creatorId String
+  creator   User            @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  // Optional: link to specific product or course
+  productId String?
+  courseId  String?
+
+  @@unique([creatorId, email, productId, courseId]) // One signup per creator per product/course
+  @@index([creatorId])
+  @@index([email])
+  @@index([productId])
+  @@index([courseId])
+  @@index([source])
+  @@index([createdAt])
+  @@map("waitlist")
+}
+
+// ============================================
+// DISCOUNT CODE MODELS
+// ============================================
+
+model DiscountCode {
+  id                  String       @id @default(cuid())
+  code                String       @unique
+  name                String       // Friendly name for the discount
+  type                DiscountType @default(PERCENTAGE)
+  value               Float        // Percentage (e.g., 20) or fixed amount (e.g., 10.00)
+  minPurchase         Float        @default(0) // Minimum purchase amount
+  maxUses             Int          @default(0) // 0 = unlimited
+  usedCount           Int          @default(0)
+  startDate           DateTime?
+  endDate             DateTime?
+  isActive            Boolean      @default(true)
+  isOneTimeUse        Boolean      @default(false) // One-time use per customer
+  applicableProducts  String       @default("") // JSON array of product IDs, empty = all products
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+
+  @@index([creatorId])
+  @@index([code])
+  @@index([isActive])
+  @@index([startDate])
+  @@index([endDate])
+  @@map("discount_codes")
+}
+
+// ============================================
+// REVIEW/RATING MODELS
+// ============================================
+
+model Review {
+  id          String   @id @default(cuid())
+  userId      String
+  productId   String?
+  courseId    String?
+  rating      Int      // 1-5 stars
+  title       String
+  content     String
+  isVerified  Boolean  @default(false) // Verified purchase
+  isApproved  Boolean  @default(false) // Moderation status
+  helpful     Int      @default(0) // Number of helpful votes
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  replies ReviewReply[]
+  votes   ReviewVote[]
+
+  @@index([userId])
+  @@index([productId])
+  @@index([courseId])
+  @@index([rating])
+  @@index([isApproved])
+  @@index([createdAt])
+  @@map("reviews")
+}
+
+model ReviewReply {
+  id        String   @id @default(cuid())
+  reviewId  String
+  userId    String   // Creator who replies
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([reviewId])
+  @@index([userId])
+  @@map("review_replies")
+}
+
+model ReviewVote {
+  id        String   @id @default(cuid())
+  reviewId  String
+  userId    String
+  createdAt DateTime @default(now())
+
+  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([reviewId, userId]) // One vote per user per review
+  @@index([reviewId])
+  @@index([userId])
+  @@map("review_votes")
+}
+
+// ============================================
+// WEBHOOK MODELS
+// ============================================
+
+enum WebhookStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  RETRYING
+}
+
+model Webhook {
+  id        String   @id @default(cuid())
+  url       String   // The endpoint URL to receive webhook events
+  secret    String   // Secret key for signature verification
+  events    String   // JSON array of subscribed events
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  logs   WebhookLog[]
+
+  @@index([userId])
+  @@index([isActive])
+  @@map("webhooks")
+}
+
+model WebhookLog {
+  id        String        @id @default(cuid())
+  event     String        // The event type that triggered this webhook
+  payload   String        // JSON payload sent
+  response  String?       // Response from the webhook endpoint
+  status    WebhookStatus @default(PENDING)
+  attempts  Int           @default(1)
+  error     String?       // Error message if failed
+  createdAt DateTime      @default(now())
+
+  webhookId String
+  webhook   Webhook @relation(fields: [webhookId], references: [id], onDelete: Cascade)
+
+  @@index([webhookId])
+  @@index([event])
+  @@index([status])
+  @@index([createdAt])
+  @@map("webhook_logs")
+}

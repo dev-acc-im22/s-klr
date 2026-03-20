@@ -1,0 +1,17 @@
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+// Ultra-simple middleware for preview environment
+// No redirect logic - just pass through all requests
+export function middleware(req: NextRequest) {
+  // Always allow all requests - no authentication checks in preview/dev
+  // This prevents any redirect loops
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: [
+    // Match all routes except static files
+    "/((?!_next/static|_next/image|favicon.ico|.*\\..*$).*)",
+  ],
+};
