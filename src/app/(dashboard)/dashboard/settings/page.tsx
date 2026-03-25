@@ -10,8 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { useToast } from '@/hooks/use-toast';
 import { mockGhostUser } from '@/store/useGhostStore';
 
@@ -31,7 +30,6 @@ interface Settings {
 }
 
 export default function SettingsPage() {
-  const { isGhostMode } = useGhostMode();
   const { toast } = useToast();
   const [loading, setSaving] = useState(false);
   const [settings, setSettings] = useState<Settings>({
@@ -51,23 +49,21 @@ export default function SettingsPage() {
 
   useEffect(() => {
     // Load settings
-    if (isGhostMode) {
-      setSettings({
-        name: mockGhostUser.name,
-        username: mockGhostUser.username,
-        email: mockGhostUser.email,
-        bio: mockGhostUser.bio,
-        storeName: mockGhostUser.settings.storeName,
-        storeDescription: mockGhostUser.settings.storeDescription,
-        socialLinks: {
-          instagram: 'https://instagram.com/ghostadmin',
-          youtube: 'https://youtube.com/@ghostadmin',
-          twitter: 'https://twitter.com/ghostadmin',
-          tiktok: '',
-        },
-      });
-    }
-  }, [isGhostMode]);
+    setSettings({
+      name: mockGhostUser.name,
+      username: mockGhostUser.username,
+      email: mockGhostUser.email,
+      bio: mockGhostUser.bio,
+      storeName: mockGhostUser.settings.storeName,
+      storeDescription: mockGhostUser.settings.storeDescription,
+      socialLinks: {
+        instagram: 'https://instagram.com/ghostadmin',
+        youtube: 'https://youtube.com/@ghostadmin',
+        twitter: 'https://twitter.com/ghostadmin',
+        tiktok: '',
+      },
+    });
+  }, []);
 
   const handleSave = async () => {
     setSaving(true);

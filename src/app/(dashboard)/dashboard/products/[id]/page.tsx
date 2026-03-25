@@ -20,9 +20,9 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { PRODUCT_CATEGORIES, ProductFormData } from '@/types/product';
 import { mockProducts } from '@/lib/mock-data/products';
-import { useGhostMode } from '@/hooks/useGhostMode';
+
 import { useToast } from '@/hooks/use-toast';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { AIDescriptionGenerator } from '@/components/dashboard/products/AIDescriptionGenerator';
 import { UpsellManager, CrossSellManager } from '@/components/dashboard/upsell';
 import { LaunchSettings } from '@/components/dashboard/waitlist';
@@ -34,7 +34,6 @@ export default function EditProductPage({
 }) {
   const router = useRouter();
   const { toast } = useToast();
-  const { isGhostMode } = useGhostMode();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [formData, setFormData] = useState<ProductFormData | null>(null);
@@ -49,35 +48,18 @@ export default function EditProductPage({
       setProductId(id);
 
       try {
-        if (isGhostMode) {
-          const product = mockProducts.find((p) => p.id === id);
-          if (product) {
-            setFormData({
-              title: product.title,
-              description: product.description || '',
-              price: product.price,
-              category: product.category || 'other',
-              images: product.images,
-              files: product.files,
-              featured: product.featured,
-              published: product.published,
-            });
-          }
-        } else {
-          const res = await fetch(`/api/products/${id}`);
-          const data = await res.json();
-          if (data.product) {
-            setFormData({
-              title: data.product.title,
-              description: data.product.description || '',
-              price: data.product.price,
-              category: data.product.category || 'other',
-              images: data.product.images,
-              files: data.product.files,
-              featured: data.product.featured,
-              published: data.product.published,
-            });
-          }
+        const product = mockProducts.find((p) => p.id === id);
+        if (product) {
+          setFormData({
+            title: product.title,
+            description: product.description || '',
+            price: product.price,
+            category: product.category || 'other',
+            images: product.images,
+            files: product.files,
+            featured: product.featured,
+            published: product.published,
+          });
         }
       } catch (error) {
         console.error('Failed to load product:', error);
@@ -87,7 +69,7 @@ export default function EditProductPage({
     };
 
     loadProduct();
-  }, [params, isGhostMode]);
+  }, [params]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -158,30 +140,25 @@ export default function EditProductPage({
 
   if (loading) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="flex items-center justify-center min-h-[400px]">
-          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        </div>
-      </DashboardLayout>
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
     );
   }
 
   if (!formData) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">Product not found</p>
-          <Button variant="outline" className="mt-4" asChild>
-            <Link href="/dashboard/products">Back to Products</Link>
-          </Button>
-        </div>
-      </DashboardLayout>
+      <div className="text-center py-12">
+        <p className="text-muted-foreground">Product not found</p>
+        <Button variant="outline" className="mt-4" asChild>
+          <Link href="/dashboard/products">Back to Products</Link>
+        </Button>
+      </div>
     );
   }
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -400,7 +377,6 @@ export default function EditProductPage({
             <LaunchSettings
               productId={productId}
               regularPrice={formData.price}
-              ghostMode={isGhostMode}
             />
           </TabsContent>
 
@@ -408,7 +384,7 @@ export default function EditProductPage({
           <TabsContent value="upsells" className="mt-6">
             <Card>
               <CardContent className="pt-6">
-                <UpsellManager productId={productId} ghostMode={isGhostMode} />
+                <UpsellManager productId={productId} />
               </CardContent>
             </Card>
           </TabsContent>
@@ -417,12 +393,11 @@ export default function EditProductPage({
           <TabsContent value="cross-sells" className="mt-6">
             <Card>
               <CardContent className="pt-6">
-                <CrossSellManager productId={productId} ghostMode={isGhostMode} />
+                <CrossSellManager productId={productId} />
               </CardContent>
             </Card>
           </TabsContent>
         </Tabs>
       </div>
-    </DashboardLayout>
   );
 }

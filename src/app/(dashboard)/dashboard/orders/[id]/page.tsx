@@ -7,17 +7,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { useGhostMode } from '@/hooks/useGhostMode';
+
 import { mockOrders, Order } from '@/lib/mock-data/orders';
 import { formatCurrency, formatDate, formatDateTime } from '@/lib/utils';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 
 export default function OrderDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { isGhostMode } = useGhostMode();
   const [order, setOrder] = useState<Order | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -26,14 +25,8 @@ export default function OrderDetailPage({
       const { id } = await params;
 
       try {
-        if (isGhostMode) {
-          const found = mockOrders.find((o) => o.id === id);
-          setOrder(found || null);
-        } else {
-          const res = await fetch(`/api/orders/${id}`);
-          const data = await res.json();
-          setOrder(data.order || null);
-        }
+        const found = mockOrders.find((o) => o.id === id);
+        setOrder(found || null);
       } catch (error) {
         console.error('Failed to load order:', error);
       } finally {
@@ -42,28 +35,24 @@ export default function OrderDetailPage({
     };
 
     loadOrder();
-  }, [params, isGhostMode]);
+  }, [params]);
 
   if (loading) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="flex items-center justify-center min-h-[400px]">
-          Loading...
-        </div>
-      </DashboardLayout>
+      <div className="flex items-center justify-center min-h-[400px]">
+        Loading...
+      </div>
     );
   }
 
   if (!order) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">Order not found</p>
-          <Button variant="outline" className="mt-4" asChild>
-            <Link href="/dashboard/orders">Back to Orders</Link>
-          </Button>
-        </div>
-      </DashboardLayout>
+      <div className="text-center py-12">
+        <p className="text-muted-foreground">Order not found</p>
+        <Button variant="outline" className="mt-4" asChild>
+          <Link href="/dashboard/orders">Back to Orders</Link>
+        </Button>
+      </div>
     );
   }
 
@@ -81,8 +70,7 @@ export default function OrderDetailPage({
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" asChild>
@@ -205,6 +193,5 @@ export default function OrderDetailPage({
         </div>
       </div>
       </div>
-    </DashboardLayout>
   );
 }

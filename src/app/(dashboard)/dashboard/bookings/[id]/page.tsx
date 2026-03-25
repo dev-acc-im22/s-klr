@@ -21,7 +21,7 @@ import {
   MapPin,
   Globe,
 } from "lucide-react";
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -40,7 +40,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { useGhostMode } from "@/hooks/useGhostMode";
+
 import { getMockBookingById, type MockBooking, type BookingStatus } from "@/lib/mock-data/bookings";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
@@ -72,9 +72,13 @@ const statusConfig: Record<BookingStatus, { color: string; bgColor: string; labe
 export default function BookingDetailsPage() {
   const params = useParams();
   const router = useRouter();
-  const { isGhostMode, mounted } = useGhostMode();
+  const [mounted, setMounted] = React.useState(false);
   const [notes, setNotes] = React.useState("");
   const [isSaving, setIsSaving] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Get booking by ID
   const booking = React.useMemo(() => {
@@ -85,21 +89,19 @@ export default function BookingDetailsPage() {
   // If booking not found
   if (!booking) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
-          <Calendar className="h-16 w-16 text-muted-foreground" />
-          <h2 className="text-xl font-semibold">Booking Not Found</h2>
-          <p className="text-muted-foreground">
-            The booking you&apos;re looking for doesn&apos;t exist or has been removed.
-          </p>
-          <Button asChild>
-            <Link href="/dashboard/bookings">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Bookings
-            </Link>
-          </Button>
-        </div>
-      </DashboardLayout>
+      <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
+        <Calendar className="h-16 w-16 text-muted-foreground" />
+        <h2 className="text-xl font-semibold">Booking Not Found</h2>
+        <p className="text-muted-foreground">
+          The booking you&apos;re looking for doesn&apos;t exist or has been removed.
+        </p>
+        <Button asChild>
+          <Link href="/dashboard/bookings">
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Bookings
+          </Link>
+        </Button>
+      </div>
     );
   }
 
@@ -157,8 +159,7 @@ export default function BookingDetailsPage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Page Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-4">
@@ -414,6 +415,5 @@ export default function BookingDetailsPage() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
   );
 }

@@ -36,8 +36,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
-import { useGhostMode } from "@/hooks/useGhostMode";
+
 import { SessionCard } from "@/components/dashboard/coaching/SessionCard";
 import { SessionCalendar } from "@/components/dashboard/coaching/SessionCalendar";
 import { SessionNotes } from "@/components/dashboard/coaching/SessionNotes";
@@ -50,7 +49,6 @@ import {
 import { cn } from "@/lib/utils";
 
 export default function SessionsPage() {
-  const { isGhostMode } = useGhostMode();
   const [searchQuery, setSearchQuery] = React.useState("");
   const [statusFilter, setStatusFilter] = React.useState<string>("all");
   const [selectedSession, setSelectedSession] = React.useState<CoachingSession | null>(null);
@@ -75,8 +73,7 @@ export default function SessionsPage() {
   const completedFilteredSessions = filteredSessions.filter((s) => s.status === "completed");
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-4">
@@ -301,6 +298,5 @@ export default function SessionsPage() {
           </DialogContent>
         </Dialog>
       </div>
-    </DashboardLayout>
   );
 }

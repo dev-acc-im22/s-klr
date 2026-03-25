@@ -19,14 +19,12 @@ import {
 } from '@/components/ui/select';
 import { PRODUCT_CATEGORIES, ProductFormData, DEFAULT_PRODUCT } from '@/types/product';
 import { useToast } from '@/hooks/use-toast';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
-import { useGhostMode } from '@/hooks/useGhostMode';
+
 import { AIDescriptionGenerator } from '@/components/dashboard/products/AIDescriptionGenerator';
 
 export default function NewProductPage() {
   const router = useRouter();
   const { toast } = useToast();
-  const { isGhostMode } = useGhostMode();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<ProductFormData>(DEFAULT_PRODUCT);
   const [seoTitle, setSeoTitle] = useState('');
@@ -75,8 +73,7 @@ export default function NewProductPage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" asChild>
@@ -287,6 +284,5 @@ export default function NewProductPage() {
         </div>
       </form>
       </div>
-    </DashboardLayout>
   );
 }

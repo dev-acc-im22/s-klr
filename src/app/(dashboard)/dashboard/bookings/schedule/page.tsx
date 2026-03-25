@@ -3,13 +3,13 @@
 import * as React from "react";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock, Globe, Settings } from "lucide-react";
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
+
 import { AvailabilityForm } from "@/components/dashboard/bookings/AvailabilityForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { useGhostMode } from "@/hooks/useGhostMode";
+
 import {
   defaultAvailabilitySettings,
   dayNames,
@@ -18,7 +18,6 @@ import {
 import { toast } from "sonner";
 
 export default function SchedulePage() {
-  const { isGhostMode } = useGhostMode();
   const [settings, setSettings] = React.useState<MockAvailabilitySettings>(defaultAvailabilitySettings);
 
   // Handle save
@@ -50,8 +49,7 @@ export default function SchedulePage() {
   }, [settings.slots]);
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Page Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-4">
@@ -162,6 +160,5 @@ export default function SchedulePage() {
           </CardContent>
         </Card>
       </div>
-    </DashboardLayout>
   );
 }

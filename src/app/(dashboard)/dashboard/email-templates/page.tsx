@@ -32,8 +32,7 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/components/ui/tabs';
-import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { TemplateList, TemplateListItem, templateTypeConfig } from '@/components/dashboard/email-templates/TemplateList';
 import { TemplateEditor } from '@/components/dashboard/email-templates/TemplateEditor';
 import { TemplatePreview } from '@/components/dashboard/email-templates/TemplatePreview';
@@ -44,7 +43,6 @@ let clientTemplates: MockEmailTemplate[] = [...defaultEmailTemplates];
 
 export default function EmailTemplatesPage() {
   const router = useRouter();
-  const { isGhostMode } = useGhostMode();
   const [templates, setTemplates] = useState<MockEmailTemplate[]>([]);
   const [selectedTemplate, setSelectedTemplate] = useState<MockEmailTemplate | null>(null);
   const [editingTemplate, setEditingTemplate] = useState<MockEmailTemplate | null>(null);
@@ -239,8 +237,7 @@ export default function EmailTemplatesPage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
@@ -454,6 +451,5 @@ export default function EmailTemplatesPage() {
           </DialogContent>
         </Dialog>
       </div>
-    </DashboardLayout>
   );
 }
