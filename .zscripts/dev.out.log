@@ -1,0 +1,2807 @@
+==========================================
+[2026-03-16 08:27:02] Starting: bun install
+==========================================
+[BUN] Installing dependencies...
+[0.32ms] ".env"
+bun install v1.3.10 (30e609e0)
+
++ @tailwindcss/postcss@4.1.18
++ @types/react@19.2.8
++ @types/react-dom@19.2.3
++ bun-types@1.3.6
++ eslint@9.39.2
++ eslint-config-next@16.1.3
++ tailwindcss@4.1.18
++ tw-animate-css@1.4.0
++ typescript@5.9.3
++ @dnd-kit/core@6.3.1
++ @dnd-kit/sortable@10.0.0
++ @dnd-kit/utilities@3.2.2
++ @hookform/resolvers@5.2.2
++ @mdxeditor/editor@3.52.3
++ @prisma/client@6.19.2
++ @radix-ui/react-accordion@1.2.12
++ @radix-ui/react-alert-dialog@1.1.15
++ @radix-ui/react-aspect-ratio@1.1.8
++ @radix-ui/react-avatar@1.1.11
++ @radix-ui/react-checkbox@1.3.3
++ @radix-ui/react-collapsible@1.1.12
++ @radix-ui/react-context-menu@2.2.16
++ @radix-ui/react-dialog@1.1.15
++ @radix-ui/react-dropdown-menu@2.1.16
++ @radix-ui/react-hover-card@1.1.15
++ @radix-ui/react-label@2.1.8
++ @radix-ui/react-menubar@1.1.16
++ @radix-ui/react-navigation-menu@1.2.14
++ @radix-ui/react-popover@1.1.15
++ @radix-ui/react-progress@1.1.8
++ @radix-ui/react-radio-group@1.3.8
++ @radix-ui/react-scroll-area@1.2.10
++ @radix-ui/react-select@2.2.6
++ @radix-ui/react-separator@1.1.8
++ @radix-ui/react-slider@1.3.6
++ @radix-ui/react-slot@1.2.4
++ @radix-ui/react-switch@1.2.6
++ @radix-ui/react-tabs@1.1.13
++ @radix-ui/react-toast@1.2.15
++ @radix-ui/react-toggle@1.1.10
++ @radix-ui/react-toggle-group@1.1.11
++ @radix-ui/react-tooltip@1.2.8
++ @reactuses/core@6.1.9
++ @tanstack/react-query@5.90.19
++ @tanstack/react-table@8.21.3
++ class-variance-authority@0.7.1
++ clsx@2.1.1
++ cmdk@1.1.1
++ date-fns@4.1.0
++ embla-carousel-react@8.6.0
++ framer-motion@12.26.2
++ input-otp@1.4.2
++ lucide-react@0.525.0
++ next@16.1.3
++ next-auth@4.24.13
++ next-intl@4.7.0
++ next-themes@0.4.6
++ prisma@6.19.2
++ react@19.2.3
++ react-day-picker@9.13.0
++ react-dom@19.2.3
++ react-hook-form@7.71.1
++ react-markdown@10.1.0
++ react-resizable-panels@3.0.6
++ react-syntax-highlighter@15.6.6
++ recharts@2.15.4
++ sharp@0.34.5
++ sonner@2.0.7
++ tailwind-merge@3.4.0
++ tailwindcss-animate@1.0.7
++ uuid@11.1.0
++ vaul@1.1.2
++ z-ai-web-dev-sdk@0.0.17
++ zod@4.3.5
++ zustand@5.0.10
+
+827 packages installed [11.39s]
+==========================================
+[2026-03-16 08:27:14] Completed: bun install
+[LOG] Step: bun install | Duration: 12s
+==========================================
+
+==========================================
+[2026-03-16 08:27:14] Starting: bun run db:push
+==========================================
+[BUN] Setting up database...
+$ prisma db push
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "custom.db" at "file:/home/z/my-project/db/custom.db"
+
+SQLite database custom.db created at file:/home/z/my-project/db/custom.db
+
+🚀  Your database is now in sync with your Prisma schema. Done in 17ms
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v6.19.2) to ./node_modules/@prisma/client in 69ms
+┌─────────────────────────────────────────────────────────┐
+│  Update available 6.19.2 -> 7.5.0                       │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+
+==========================================
+[2026-03-16 08:27:15] Completed: bun run db:push
+[LOG] Step: bun run db:push | Duration: 1s
+==========================================
+
+==========================================
+[2026-03-16 08:27:15] Starting: Starting Next.js dev server
+==========================================
+[BUN] Starting development server...
+==========================================
+$ next dev -p 3000 2>&1 | tee dev.log
+[2026-03-16 08:27:15] Completed: Starting Next.js dev server
+[LOG] Step: Starting Next.js dev server | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-16 08:27:15] Starting: Waiting for Next.js dev server
+==========================================
+Waiting for Next.js dev server to be ready on localhost:3000...
+Attempt 1/60: Next.js dev server not ready yet, waiting...
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.2.67:3000
+- Environments: .env
+
+✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+  We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+  The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+  	- include was updated to add '.next/dev/types/**/*.ts'
+
+  The following mandatory changes were made to your tsconfig.json:
+
+  	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+
+✓ Ready in 902ms
+Next.js dev server is ready!
+ GET / 200 in 2.8s (compile: 2.7s, render: 128ms)
+==========================================
+ GET / 200 in 2.9s (compile: 2.7s, render: 197ms)
+[2026-03-16 08:27:19] Completed: Waiting for Next.js dev server
+[LOG] Step: Waiting for Next.js dev server | Duration: 4s
+==========================================
+
+==========================================
+[2026-03-16 08:27:19] Starting: Health check
+==========================================
+[BUN] Performing health check...
+ GET / 200 in 22ms (compile: 1528µs, render: 20ms)
+[BUN] Health check passed
+==========================================
+[2026-03-16 08:27:20] Completed: Health check
+[LOG] Step: Health check | Duration: 1s
+==========================================
+
+==========================================
+[2026-03-16 08:27:20] Starting: Starting mini-services
+==========================================
+Found mini-services directory, scanning for sub-services...
+Mini-services startup completed. Started 0 service(s).
+==========================================
+[2026-03-16 08:27:20] Completed: Starting mini-services
+[LOG] Step: Starting mini-services | Duration: 0s
+==========================================
+
+Next.js dev server is running in background (PID: 325).
+Use 'kill 325' to stop it.
+ GET / 200 in 39ms (compile: 4ms, render: 35ms)
+⚠ Cross origin request detected from preview-chat-35bdc524-73ef-485e-a073-8ec7014c92b5.space.z.ai to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 36ms (compile: 3ms, render: 33ms)
+ GET / 200 in 29ms (compile: 2ms, render: 27ms)
+ GET / 200 in 29ms (compile: 2ms, render: 27ms)
+✓ Compiled in 259ms
+⨯ ./node_modules/next/dist/client/app-index.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/app-router.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/error-boundary.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/error-boundary.js
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/errors/root-error-boundary.js:12:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/errors/root-error-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/layout-router.js:15:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/layout-router.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/layout-router.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:32:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/lib/console.js:23:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/lib/console.js
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js
+    ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:23:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/index.js
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js:35:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js:31:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js:36:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/format-webpack-messages.js:33:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/format-webpack-messages.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/app-router.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js
+    ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/layout-router.js:16:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/layout-router.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/layout-router.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/navigation.js:85:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/navigation.js
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/redirect-boundary.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/render-from-template-context.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/render-from-template-context.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/render-from-template-context.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/use-action-queue.js:23:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/use-action-queue.js
+    ./node_modules/next/dist/client/components/app-router-instance.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js
+    ./node_modules/next/dist/client/components/navigation.js
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/app-index.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/app-router.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/error-boundary.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/error-boundary.js
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/errors/root-error-boundary.js:12:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/errors/root-error-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/layout-router.js:15:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/layout-router.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/layout-router.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:32:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/lib/console.js:23:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/lib/console.js
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js
+    ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:23:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/index.js
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js:35:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js:31:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js:36:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/format-webpack-messages.js:33:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/format-webpack-messages.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/app-router.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js
+    ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/layout-router.js:16:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/layout-router.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/layout-router.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/navigation.js:85:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/navigation.js
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/redirect-boundary.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/render-from-template-context.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/render-from-template-context.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/render-from-template-context.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/use-action-queue.js:23:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/use-action-queue.js
+    ./node_modules/next/dist/client/components/app-router-instance.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js
+    ./node_modules/next/dist/client/components/navigation.js
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/app-index.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/app-router.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/error-boundary.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/error-boundary.js
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/errors/root-error-boundary.js:12:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/errors/root-error-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/layout-router.js:15:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/layout-router.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/layout-router.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:32:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/lib/console.js:23:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/lib/console.js
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js
+    ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/client-entry.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:23:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/index.js
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js:35:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js:31:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js:36:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/format-webpack-messages.js:33:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/format-webpack-messages.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js
+    ./node_modules/next/dist/client/dev/hot-reloader/app/web-socket.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/app-router.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js
+    ./node_modules/next/dist/client/components/dev-root-http-access-fallback-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/layout-router.js:16:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/layout-router.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/layout-router.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/navigation.js:85:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/navigation.js
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/redirect-boundary.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/render-from-template-context.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/render-from-template-context.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/render-from-template-context.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/client/components/use-action-queue.js:23:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/use-action-queue.js
+    ./node_modules/next/dist/client/components/app-router-instance.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js
+    ./node_modules/next/dist/client/components/navigation.js
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+✓ Compiled in 125ms
+✓ Compiled in 102ms
+  Reload env: .env.local
+⨯ ./src/app/globals.css:5190:8
+Parsing CSS source code failed
+[0m [90m 5188 |[39m   initial[33m-[39mvalue[33m:[39m [35m0[39m[33m;[39m
+ [90m 5189 |[39m }
+[31m[1m>[22m[39m[90m 5190 |[39m [33m@[39m[36mimport[39m url([32m'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap'[39m)[33m;[39m
+ [90m      |[39m        [31m[1m^[22m[39m
+ [90m 5191 |[39m [33m:[39mroot {
+ [90m 5192 |[39m   [33m--[39mradius[33m:[39m [35m0.625[39mrem[33m;[39m
+ [90m 5193 |[39m   [33m--[39mbackground[33m:[39m [33m#[39mffffff[33m;[39m[0m
+
+@import rules must precede all rules aside from @charset and @layer statements
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+
+
+./src/components/home/HeroSection.tsx:17:33
+Parsing ecmascript source code failed
+[0m [90m 15 |[39m [36mconst[39m stats [33m=[39m [
+ [90m 16 |[39m   { value[33m:[39m [32m'50K+'[39m[33m,[39m label[33m:[39m [32m'Creators'[39m[33m,[39m icon[33m:[39m [33mUsers[39m }[33m,[39m
+[31m[1m>[22m[39m[90m 17 |[39m   { value[33m:[39m [32m'$10M+'[39m[33m,[39m label[33m:[39m[33mEarned[39m[32m', icon: DollarSign },[39m
+ [90m    |[39m                                 [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 18 |[39m   { value[33m:[39m [32m'4.9/5'[39m[33m,[39m label[33m:[39m [32m'Rating'[39m[33m,[39m icon[33m:[39m [33mStar[39m }[33m,[39m
+ [90m 19 |[39m ]
+ [90m 20 |[39m[0m
+
+Unterminated string constant
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+ GET / 500 in 1049ms (compile: 900ms, render: 149ms)
+⨯ ./src/app/globals.css:5190:8
+Parsing CSS source code failed
+[0m [90m 5188 |[39m   initial[33m-[39mvalue[33m:[39m [35m0[39m[33m;[39m
+ [90m 5189 |[39m }
+[31m[1m>[22m[39m[90m 5190 |[39m [33m@[39m[36mimport[39m url([32m'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap'[39m)[33m;[39m
+ [90m      |[39m        [31m[1m^[22m[39m
+ [90m 5191 |[39m [33m:[39mroot {
+ [90m 5192 |[39m   [33m--[39mradius[33m:[39m [35m0.625[39mrem[33m;[39m
+ [90m 5193 |[39m   [33m--[39mbackground[33m:[39m [33m#[39mffffff[33m;[39m[0m
+
+@import rules must precede all rules aside from @charset and @layer statements
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+
+
+./src/components/home/HeroSection.tsx:17:33
+Parsing ecmascript source code failed
+[0m [90m 15 |[39m [36mconst[39m stats [33m=[39m [
+ [90m 16 |[39m   { value[33m:[39m [32m'50K+'[39m[33m,[39m label[33m:[39m [32m'Creators'[39m[33m,[39m icon[33m:[39m [33mUsers[39m }[33m,[39m
+[31m[1m>[22m[39m[90m 17 |[39m   { value[33m:[39m [32m'$10M+'[39m[33m,[39m label[33m:[39m[33mEarned[39m[32m', icon: DollarSign },[39m
+ [90m    |[39m                                 [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 18 |[39m   { value[33m:[39m [32m'4.9/5'[39m[33m,[39m label[33m:[39m [32m'Rating'[39m[33m,[39m icon[33m:[39m [33mStar[39m }[33m,[39m
+ [90m 19 |[39m ]
+ [90m 20 |[39m[0m
+
+Unterminated string constant
+
+Import traces:
+  Client Component Browser:
+    ./src/components/home/HeroSection.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/home/HeroSection.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+ GET / 500 in 130ms (compile: 121ms, render: 8ms)
+✓ Compiled in 132ms
+⨯ ./src/app/globals.css:5190:8
+Parsing CSS source code failed
+[0m [90m 5188 |[39m   initial[33m-[39mvalue[33m:[39m [35m0[39m[33m;[39m
+ [90m 5189 |[39m }
+[31m[1m>[22m[39m[90m 5190 |[39m [33m@[39m[36mimport[39m url([32m'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap'[39m)[33m;[39m
+ [90m      |[39m        [31m[1m^[22m[39m
+ [90m 5191 |[39m [33m:[39mroot {
+ [90m 5192 |[39m   [33m--[39mradius[33m:[39m [35m0.625[39mrem[33m;[39m
+ [90m 5193 |[39m   [33m--[39mbackground[33m:[39m [33m#[39mffffff[33m;[39m[0m
+
+@import rules must precede all rules aside from @charset and @layer statements
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+
+ GET / 500 in 174ms (compile: 165ms, render: 9ms)
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Compiled in 133ms
+✓ Compiled in 271ms
+ GET / 404 in 59ms (compile: -20035µs, proxy.ts: 56ms, render: 22ms)
+✓ Compiled in 372ms
+ GET / 200 in 508ms (compile: 246ms, proxy.ts: 57ms, render: 205ms)
+ GET /avatars/marcus.jpg 404 in 337ms (compile: 153ms, proxy.ts: 4ms, render: 179ms)
+ GET /avatars/sarah.jpg 404 in 342ms (compile: 171ms, proxy.ts: 4ms, render: 167ms)
+ GET /avatars/david.jpg 404 in 88ms (compile: 8ms, proxy.ts: 3ms, render: 78ms)
+ GET /avatars/emily.jpg 404 in 55ms (compile: 10ms, proxy.ts: 5ms, render: 40ms)
+ GET / 200 in 84ms (compile: 9ms, proxy.ts: 6ms, render: 69ms)
+ GET /avatars/emily.jpg 404 in 190ms (compile: 28ms, proxy.ts: 6ms, render: 157ms)
+ GET /avatars/marcus.jpg 404 in 190ms (compile: 40ms, proxy.ts: 7ms, render: 142ms)
+ GET /avatars/david.jpg 404 in 189ms (compile: 82ms, proxy.ts: 9ms, render: 98ms)
+ GET /avatars/sarah.jpg 404 in 179ms (compile: 137ms, proxy.ts: 6ms, render: 36ms)
+ GET /pricing 404 in 29ms (compile: 9ms, proxy.ts: 5ms, render: 14ms)
+ GET /pricing 404 in 47ms (compile: 6ms, proxy.ts: 2ms, render: 39ms)
+ GET /features 404 in 29ms (compile: 6ms, proxy.ts: 3ms, render: 20ms)
+ GET /features 404 in 35ms (compile: 6ms, proxy.ts: 3ms, render: 26ms)
+ GET /about 404 in 19ms (compile: 6ms, proxy.ts: 3ms, render: 11ms)
+ GET /about 404 in 30ms (compile: 6ms, proxy.ts: 1730µs, render: 22ms)
+ GET / 200 in 21ms (compile: 4ms, proxy.ts: 4ms, render: 13ms)
+ GET /avatars/sarah.jpg 404 in 145ms (compile: 16ms, proxy.ts: 5ms, render: 125ms)
+ GET /avatars/marcus.jpg 404 in 140ms (compile: 33ms, proxy.ts: 2ms, render: 105ms)
+ GET /avatars/david.jpg 404 in 137ms (compile: 74ms, proxy.ts: 6ms, render: 57ms)
+ GET /avatars/emily.jpg 404 in 117ms (compile: 71ms, proxy.ts: 10ms, render: 36ms)
+ GET /login 200 in 896ms (compile: 859ms, proxy.ts: 3ms, render: 35ms)
+ GET /signup 404 in 22ms (compile: 8ms, proxy.ts: 3ms, render: 11ms)
+ GET /signup 404 in 33ms (compile: 7ms, proxy.ts: 3ms, render: 24ms)
+ GET /signup 404 in 20ms (compile: 7ms, proxy.ts: 3ms, render: 10ms)
+ GET /signup 404 in 46ms (compile: 6ms, proxy.ts: 2ms, render: 38ms)
+ GET /signup 404 in 20ms (compile: 7ms, proxy.ts: 3ms, render: 11ms)
+ GET /signup 404 in 33ms (compile: 6ms, proxy.ts: 2ms, render: 25ms)
+ GET /login 200 in 16ms (compile: 3ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 2ms, render: 9ms)
+ GET /avatars/marcus.jpg 404 in 121ms (compile: 12ms, proxy.ts: 3ms, render: 106ms)
+ GET /avatars/sarah.jpg 404 in 120ms (compile: 37ms, proxy.ts: 3ms, render: 80ms)
+ GET /avatars/david.jpg 404 in 95ms (compile: 30ms, proxy.ts: 11ms, render: 53ms)
+ GET /avatars/emily.jpg 404 in 96ms (compile: 48ms, proxy.ts: 11ms, render: 37ms)
+ GET /login 200 in 23ms (compile: 8ms, proxy.ts: 4ms, render: 11ms)
+✓ Compiled in 209ms
+ GET / 200 in 74ms (compile: 50ms, proxy.ts: 3ms, render: 21ms)
+ GET /avatars/emily.jpg 404 in 332ms (compile: 73ms, proxy.ts: 5ms, render: 254ms)
+ GET /avatars/sarah.jpg 404 in 331ms (compile: 96ms, proxy.ts: 6ms, render: 229ms)
+ GET /avatars/marcus.jpg 404 in 319ms (compile: 234ms, proxy.ts: 5ms, render: 81ms)
+ GET /avatars/david.jpg 404 in 100ms (compile: 66ms, proxy.ts: 5ms, render: 29ms)
+✓ Compiled in 133ms
+✓ Compiled in 149ms
+✓ Compiled in 187ms
+✓ Compiled in 196ms
+✓ Compiled in 175ms
+✓ Compiled in 158ms
+  Reload env: .env.local
+ GET / 200 in 121ms (compile: 51ms, proxy.ts: 34ms, render: 36ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 1827µs, render: 13ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 23ms (compile: 4ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 5ms, render: 10ms)
+ GET / 200 in 15ms (compile: 1942µs, proxy.ts: 1804µs, render: 11ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 1888µs, render: 11ms)
+ GET / 200 in 21ms (compile: 8ms, proxy.ts: 1922µs, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1962µs, render: 10ms)
+ GET / 200 in 16ms (compile: 1982µs, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 26ms (compile: 8ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 4ms, render: 15ms)
+ GET / 200 in 21ms (compile: 7ms, proxy.ts: 4ms, render: 11ms)
+ GET / 200 in 18ms (compile: 4ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 27ms (compile: 3ms, proxy.ts: 3ms, render: 21ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1999µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1985µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 22ms (compile: 2ms, proxy.ts: 2ms, render: 18ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1956µs, render: 11ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 23ms (compile: 2ms, proxy.ts: 2ms, render: 18ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1947µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1984µs, render: 11ms)
+ GET / 200 in 37ms (compile: 3ms, proxy.ts: 2ms, render: 32ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 15ms (compile: 1935µs, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1711µs, render: 9ms)
+ GET / 200 in 14ms (compile: 1936µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 13ms (compile: 1775µs, proxy.ts: 1773µs, render: 10ms)
+ GET / 200 in 18ms (compile: 2ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 18ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 4ms, render: 13ms)
+ GET / 200 in 23ms (compile: 3ms, proxy.ts: 3ms, render: 17ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 7ms, render: 12ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1932µs, render: 10ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 33ms (compile: 5ms, proxy.ts: 3ms, render: 24ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1936µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 15ms (compile: 1925µs, proxy.ts: 1945µs, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1727µs, render: 10ms)
+ GET / 200 in 25ms (compile: 1952µs, proxy.ts: 1795µs, render: 21ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 1996µs, proxy.ts: 1892µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1936µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1937µs, proxy.ts: 1832µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1916µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1942µs, proxy.ts: 1808µs, render: 9ms)
+ GET / 200 in 14ms (compile: 1979µs, proxy.ts: 1753µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1890µs, proxy.ts: 1856µs, render: 10ms)
+ GET / 200 in 26ms (compile: 10ms, proxy.ts: 1721µs, render: 14ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 14ms (compile: 1967µs, proxy.ts: 1982µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 3ms, proxy.ts: 1977µs, render: 9ms)
+ GET / 200 in 14ms (compile: 1998µs, proxy.ts: 1862µs, render: 10ms)
+ GET / 200 in 17ms (compile: 1975µs, proxy.ts: 1904µs, render: 13ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 37ms (compile: 6ms, proxy.ts: 1916µs, render: 29ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+✓ Compiled in 105ms
+✓ Compiled in 174ms
+ GET / 200 in 317ms (compile: 57ms, proxy.ts: 3ms, render: 256ms)
+ GET / 200 in 43ms (compile: 7ms, proxy.ts: 6ms, render: 30ms)
+ GET /avatars/marcus.jpg 404 in 352ms (compile: 294ms, proxy.ts: 6ms, render: 52ms)
+ GET /avatars/sarah.jpg 404 in 359ms (compile: 167ms, proxy.ts: 4ms, render: 188ms)
+ GET /avatars/emily.jpg 404 in 49ms (compile: 6ms, proxy.ts: 3ms, render: 40ms)
+ GET /avatars/david.jpg 404 in 61ms (compile: 27ms, proxy.ts: 3ms, render: 30ms)
+[next-auth][warn][DEBUG_ENABLED] 
+https://next-auth.js.org/warnings#debug_enabled
+ GET /api/auth/session 200 in 1469ms (compile: 1438ms, render: 31ms)
+✓ Compiled in 870ms
+ GET / 200 in 47ms (compile: 6ms, proxy.ts: 17ms, render: 24ms)
+ GET / 200 in 23ms (compile: 4ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 33ms (compile: 14ms, proxy.ts: 2ms, render: 17ms)
+ GET /login 200 in 117ms (compile: 85ms, proxy.ts: 2ms, render: 30ms)
+ GET /signup 200 in 524ms (compile: 492ms, proxy.ts: 3ms, render: 28ms)
+ GET /login 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET /signup 200 in 26ms (compile: 3ms, proxy.ts: 4ms, render: 20ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 3ms, render: 10ms)
+ GET /avatars/sarah.jpg 404 in 62ms (compile: 14ms, proxy.ts: 2ms, render: 45ms)
+ GET /avatars/emily.jpg 404 in 138ms (compile: 8ms, proxy.ts: 1967µs, render: 128ms)
+ GET /avatars/marcus.jpg 404 in 103ms (compile: 15ms, proxy.ts: 4ms, render: 84ms)
+ GET /avatars/david.jpg 404 in 108ms (compile: 33ms, proxy.ts: 3ms, render: 73ms)
+ GET / 200 in 103ms (compile: 48ms, proxy.ts: 33ms, render: 22ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 14ms)
+ GET / 200 in 22ms (compile: 5ms, proxy.ts: 2ms, render: 14ms)
+ GET / 200 in 22ms (compile: 2ms, proxy.ts: 3ms, render: 17ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 36ms (compile: 2ms, proxy.ts: 3ms, render: 31ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 14ms (compile: 3ms, proxy.ts: 1987µs, render: 9ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 2ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 16ms (compile: 4ms, proxy.ts: 3ms, render: 9ms)
+ GET / 200 in 14ms (compile: 1983µs, proxy.ts: 1972µs, render: 10ms)
+ GET / 200 in 18ms (compile: 3ms, proxy.ts: 1857µs, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 4ms, render: 13ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1865µs, render: 11ms)
+ GET / 200 in 13ms (compile: 1999µs, proxy.ts: 1849µs, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 13ms (compile: 1958µs, proxy.ts: 1843µs, render: 10ms)
+ GET / 200 in 19ms (compile: 1824µs, proxy.ts: 1859µs, render: 15ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 1984µs, proxy.ts: 1814µs, render: 11ms)
+ GET / 200 in 119ms (compile: 65ms, proxy.ts: 21ms, render: 32ms)
+ GET / 200 in 24ms (compile: 4ms, proxy.ts: 3ms, render: 17ms)
+ GET / 200 in 26ms (compile: 3ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 22ms (compile: 4ms, proxy.ts: 2ms, render: 16ms)
+ GET / 200 in 20ms (compile: 5ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 2ms, render: 17ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 18ms (compile: 3ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 31ms (compile: 14ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 23ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 30ms (compile: 4ms, proxy.ts: 4ms, render: 22ms)
+ GET / 200 in 18ms (compile: 5ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 1950µs, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 28ms (compile: 3ms, proxy.ts: 3ms, render: 22ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 24ms (compile: 2ms, proxy.ts: 2ms, render: 19ms)
+ GET / 200 in 89ms (compile: 49ms, proxy.ts: 13ms, render: 27ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 23ms (compile: 4ms, proxy.ts: 2ms, render: 17ms)
+ GET / 200 in 28ms (compile: 2ms, proxy.ts: 3ms, render: 22ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 1870µs, proxy.ts: 1891µs, render: 11ms)
+ GET / 200 in 13ms (compile: 1888µs, proxy.ts: 1982µs, render: 10ms)
+ GET / 200 in 16ms (compile: 1911µs, proxy.ts: 1799µs, render: 12ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1985µs, render: 10ms)
+ GET / 200 in 15ms (compile: 1923µs, proxy.ts: 1883µs, render: 11ms)
+ GET / 200 in 13ms (compile: 1997µs, proxy.ts: 1943µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1900µs, proxy.ts: 1911µs, render: 9ms)
+ GET / 200 in 19ms (compile: 1887µs, proxy.ts: 1777µs, render: 15ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 13ms (compile: 1890µs, proxy.ts: 1689µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1984µs, proxy.ts: 1855µs, render: 10ms)
+ GET / 200 in 12ms (compile: 1846µs, proxy.ts: 1675µs, render: 9ms)
+ GET / 200 in 22ms (compile: 1947µs, proxy.ts: 1900µs, render: 18ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 1944µs, render: 13ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1868µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1957µs, proxy.ts: 1811µs, render: 9ms)
+ GET / 200 in 16ms (compile: 1992µs, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 26ms (compile: 3ms, proxy.ts: 3ms, render: 20ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 26ms (compile: 3ms, proxy.ts: 3ms, render: 20ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1938µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1966µs, render: 9ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 14ms)
+ GET / 200 in 22ms (compile: 4ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 22ms (compile: 4ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 28ms (compile: 3ms, proxy.ts: 3ms, render: 22ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 19ms (compile: 7ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1886µs, render: 11ms)
+ GET / 200 in 24ms (compile: 11ms, proxy.ts: 1839µs, render: 11ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1928µs, render: 11ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1907µs, render: 11ms)
+ GET / 200 in 22ms (compile: 2ms, proxy.ts: 3ms, render: 17ms)
+ GET / 200 in 51ms (compile: 28ms, proxy.ts: 2ms, render: 20ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1965µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1926µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1951µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 33ms (compile: 20ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1922µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1993µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1835µs, render: 10ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 1901µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 4ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 36ms (compile: 4ms, proxy.ts: 14ms, render: 18ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 35ms (compile: 5ms, proxy.ts: 3ms, render: 27ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+✓ Compiled in 192ms
+✓ Compiled in 194ms
+✓ Compiled in 190ms
+✓ Compiled in 170ms
+ GET / 200 in 99ms (compile: 50ms, proxy.ts: 16ms, render: 33ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 6ms, render: 11ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 18ms (compile: 4ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 18ms (compile: 5ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 45ms (compile: 31ms, proxy.ts: 1911µs, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 13ms (compile: 1938µs, proxy.ts: 1761µs, render: 9ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 1766µs, render: 13ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 3ms, render: 9ms)
+ GET / 200 in 20ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 27ms (compile: 3ms, proxy.ts: 3ms, render: 21ms)
+ GET / 200 in 14ms (compile: 1996µs, proxy.ts: 1903µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1976µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 20ms (compile: 2ms, proxy.ts: 1955µs, render: 16ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1839µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 21ms (compile: 2ms, proxy.ts: 4ms, render: 14ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 24ms (compile: 3ms, proxy.ts: 4ms, render: 17ms)
+ GET / 200 in 23ms (compile: 2ms, proxy.ts: 2ms, render: 18ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1971µs, render: 11ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 1950µs, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 27ms (compile: 3ms, proxy.ts: 3ms, render: 21ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1954µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1893µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1937µs, render: 11ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 23ms (compile: 4ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 26ms (compile: 3ms, proxy.ts: 3ms, render: 20ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1825µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1990µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1894µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1963µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1891µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 26ms (compile: 2ms, proxy.ts: 3ms, render: 20ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1989µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1908µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1953µs, render: 10ms)
+ GET / 200 in 21ms (compile: 2ms, proxy.ts: 1883µs, render: 17ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 1958µs, proxy.ts: 1983µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1934µs, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1905µs, render: 10ms)
+ GET / 200 in 49ms (compile: 2ms, proxy.ts: 1926µs, render: 45ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 13ms (compile: 1986µs, proxy.ts: 1912µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1753µs, render: 9ms)
+ GET / 200 in 16ms (compile: 1945µs, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1867µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1746µs, render: 9ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 1776µs, render: 12ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 4ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 14ms (compile: 1975µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1997µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1965µs, render: 11ms)
+ GET / 200 in 13ms (compile: 1930µs, proxy.ts: 1883µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1910µs, proxy.ts: 1946µs, render: 9ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 1882µs, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 34ms (compile: 4ms, proxy.ts: 3ms, render: 28ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 20ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1866µs, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1905µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1827µs, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1825µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1970µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 1939µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1921µs, render: 11ms)
+ GET / 200 in 14ms (compile: 1915µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1984µs, render: 10ms)
+ GET / 200 in 38ms (compile: 2ms, proxy.ts: 23ms, render: 13ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 4ms, render: 12ms)
+ GET / 200 in 18ms (compile: 2ms, proxy.ts: 7ms, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1823µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1943µs, proxy.ts: 1829µs, render: 11ms)
+ GET / 200 in 13ms (compile: 1979µs, proxy.ts: 1869µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1815µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1882µs, proxy.ts: 1784µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1902µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1933µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1976µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1882µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1879µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 32ms (compile: 19ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1908µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1883µs, render: 11ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 1983µs, render: 13ms)
+ GET / 200 in 29ms (compile: 2ms, proxy.ts: 2ms, render: 25ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1882µs, render: 10ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 30ms (compile: 17ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1943µs, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 1939µs, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1867µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1842µs, render: 11ms)
+ GET / 200 in 14ms (compile: 1981µs, proxy.ts: 1874µs, render: 10ms)
+ GET / 200 in 14ms (compile: 3ms, proxy.ts: 1796µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1819µs, render: 11ms)
+ GET / 200 in 20ms (compile: 4ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 4ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1872µs, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 14ms (compile: 1939µs, proxy.ts: 1998µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 18ms (compile: 2ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1993µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1937µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1939µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1989µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1842µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+✓ Compiled in 198ms
+✓ Compiled in 219ms
+✓ Compiled in 199ms
+ GET / 200 in 100ms (compile: 53ms, proxy.ts: 17ms, render: 30ms)
+ GET / 200 in 30ms (compile: 3ms, proxy.ts: 3ms, render: 23ms)
+ GET / 200 in 27ms (compile: 3ms, proxy.ts: 3ms, render: 21ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 18ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 20ms (compile: 2ms, proxy.ts: 2ms, render: 16ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 1942µs, proxy.ts: 1949µs, render: 11ms)
+ GET / 200 in 33ms (compile: 1861µs, proxy.ts: 2ms, render: 29ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 4ms, render: 15ms)
+ GET / 200 in 15ms (compile: 1972µs, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1992µs, render: 10ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 15ms (compile: 4ms, proxy.ts: 3ms, render: 9ms)
+ GET / 200 in 14ms (compile: 3ms, proxy.ts: 1784µs, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1842µs, render: 11ms)
+ GET / 200 in 28ms (compile: 8ms, proxy.ts: 4ms, render: 16ms)
+ GET / 200 in 31ms (compile: 4ms, proxy.ts: 3ms, render: 24ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1826µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 15ms (compile: 1897µs, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 22ms (compile: 2ms, proxy.ts: 1907µs, render: 18ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 1886µs, proxy.ts: 1940µs, render: 11ms)
+ GET / 200 in 22ms (compile: 2ms, proxy.ts: 2ms, render: 18ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 38ms (compile: 3ms, proxy.ts: 2ms, render: 33ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 18ms (compile: 2ms, proxy.ts: 2ms, render: 14ms)
+ GET / 200 in 18ms (compile: 3ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 25ms (compile: 4ms, proxy.ts: 4ms, render: 18ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+✓ Compiled in 203ms
+✓ Compiled in 199ms
+ GET / 200 in 140ms (compile: 68ms, proxy.ts: 12ms, render: 60ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 4ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1901µs, render: 11ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 29ms (compile: 7ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 22ms (compile: 4ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 14ms (compile: 1956µs, proxy.ts: 1882µs, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 20ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 20ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 25ms (compile: 2ms, proxy.ts: 3ms, render: 20ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1883µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1926µs, proxy.ts: 1889µs, render: 10ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 28ms (compile: 4ms, proxy.ts: 3ms, render: 21ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 24ms (compile: 11ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1905µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 18ms (compile: 2ms, proxy.ts: 1953µs, render: 14ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 18ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 29ms (compile: 3ms, proxy.ts: 3ms, render: 23ms)
+ GET / 200 in 30ms (compile: 17ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 27ms (compile: 2ms, proxy.ts: 2ms, render: 23ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 18ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 27ms (compile: 3ms, proxy.ts: 2ms, render: 22ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 18ms (compile: 3ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 33ms (compile: 3ms, proxy.ts: 2ms, render: 28ms)
+ GET / 200 in 18ms (compile: 2ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 13ms (compile: 3ms, proxy.ts: 1749µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1950µs, proxy.ts: 1742µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1966µs, proxy.ts: 1859µs, render: 9ms)
+ GET / 200 in 13ms (compile: 3ms, proxy.ts: 1782µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1901µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1869µs, proxy.ts: 1794µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1921µs, proxy.ts: 1929µs, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 1919µs, proxy.ts: 1897µs, render: 13ms)
+ GET / 200 in 13ms (compile: 1866µs, proxy.ts: 1932µs, render: 9ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+✓ Compiled in 216ms
+✓ Compiled in 223ms
+ GET / 200 in 101ms (compile: 55ms, proxy.ts: 16ms, render: 29ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 23ms (compile: 3ms, proxy.ts: 3ms, render: 17ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 24ms (compile: 2ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 14ms (compile: 1895µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1986µs, render: 11ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 27ms (compile: 3ms, proxy.ts: 3ms, render: 20ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 20ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 12ms (compile: 1969µs, proxy.ts: 1868µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1958µs, proxy.ts: 1832µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1844µs, render: 9ms)
+ GET / 200 in 18ms (compile: 5ms, proxy.ts: 4ms, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1978µs, render: 9ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 13ms (compile: 1953µs, proxy.ts: 1981µs, render: 9ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 1759µs, render: 20ms)
+ GET / 200 in 14ms (compile: 1865µs, proxy.ts: 1961µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 3ms, proxy.ts: 1752µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1886µs, proxy.ts: 1871µs, render: 10ms)
+ GET / 200 in 21ms (compile: 2ms, proxy.ts: 1941µs, render: 17ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1920µs, render: 10ms)
+ GET / 200 in 24ms (compile: 1943µs, proxy.ts: 2ms, render: 20ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 1996µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 1998µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 27ms (compile: 3ms, proxy.ts: 3ms, render: 21ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 7ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 24ms (compile: 3ms, proxy.ts: 3ms, render: 17ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1944µs, render: 10ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1941µs, render: 11ms)
+ GET / 200 in 14ms (compile: 1943µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1887µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1990µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1975µs, render: 10ms)
+ GET / 200 in 28ms (compile: 2ms, proxy.ts: 1904µs, render: 24ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 1925µs, proxy.ts: 1839µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1938µs, proxy.ts: 1810µs, render: 10ms)
+ GET / 200 in 15ms (compile: 1963µs, proxy.ts: 1850µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1895µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 1995µs, proxy.ts: 1918µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1986µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 30ms (compile: 3ms, proxy.ts: 15ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1972µs, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1977µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 1995µs, proxy.ts: 1910µs, render: 10ms)
+ GET / 200 in 15ms (compile: 1971µs, proxy.ts: 1988µs, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2000µs, render: 10ms)
+ GET / 200 in 31ms (compile: 2ms, proxy.ts: 2ms, render: 27ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1925µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 43ms (compile: 2ms, proxy.ts: 1952µs, render: 39ms)
+ GET / 200 in 26ms (compile: 4ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 13ms (compile: 1982µs, proxy.ts: 1734µs, render: 9ms)
+ GET / 200 in 14ms (compile: 1979µs, proxy.ts: 3ms, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1894µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1947µs, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1991µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1935µs, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1783µs, render: 12ms)
+ GET / 200 in 13ms (compile: 1863µs, proxy.ts: 1802µs, render: 9ms)
+ GET / 200 in 18ms (compile: 1968µs, proxy.ts: 1942µs, render: 14ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 26ms (compile: 3ms, proxy.ts: 3ms, render: 21ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1874µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1987µs, proxy.ts: 1843µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1884µs, proxy.ts: 1770µs, render: 9ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1996µs, render: 10ms)
+ GET / 200 in 15ms (compile: 3ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 3ms, proxy.ts: 1884µs, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1883µs, render: 10ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 24ms (compile: 8ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 32ms (compile: 3ms, proxy.ts: 3ms, render: 26ms)
+ GET / 200 in 13ms (compile: 1962µs, proxy.ts: 1849µs, render: 9ms)
+ GET / 200 in 17ms (compile: 3ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1947µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1815µs, render: 10ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1675µs, render: 9ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1867µs, render: 11ms)
+ GET / 200 in 13ms (compile: 1999µs, proxy.ts: 1930µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1903µs, proxy.ts: 1718µs, render: 9ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 12ms)
+ GET / 200 in 14ms (compile: 1960µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 1968µs, proxy.ts: 1801µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1917µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1752µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1979µs, proxy.ts: 1804µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1814µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1871µs, proxy.ts: 1842µs, render: 9ms)
+ GET / 200 in 33ms (compile: 2ms, proxy.ts: 3ms, render: 27ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 1981µs, proxy.ts: 1902µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1892µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1779µs, render: 10ms)
+ GET / 200 in 296ms (compile: 57ms, proxy.ts: 17ms, render: 222ms)
+[next-auth][warn][DEBUG_ENABLED] 
+https://next-auth.js.org/warnings#debug_enabled
+ GET /api/auth/session 200 in 189ms (compile: 144ms, render: 45ms)
+ GET /avatars/emily.jpg 404 in 486ms (compile: 172ms, proxy.ts: 24ms, render: 290ms)
+ GET /avatars/sarah.jpg 404 in 484ms (compile: 186ms, proxy.ts: 24ms, render: 275ms)
+ GET /avatars/marcus.jpg 404 in 492ms (compile: 113ms, proxy.ts: 25ms, render: 353ms)
+ GET /avatars/david.jpg 404 in 483ms (compile: 200ms, proxy.ts: 23ms, render: 260ms)
+ GET / 200 in 68ms (compile: 12ms, proxy.ts: 3ms, render: 53ms)
+ GET /api/auth/session 200 in 80ms (compile: 59ms, render: 21ms)
+ GET /api/auth/session 200 in 9ms (compile: 1891µs, render: 7ms)
+ GET /avatars/david.jpg 404 in 268ms (compile: 47ms, proxy.ts: 15ms, render: 206ms)
+ GET /avatars/emily.jpg 404 in 271ms (compile: 29ms, proxy.ts: 15ms, render: 226ms)
+ GET /avatars/marcus.jpg 404 in 276ms (compile: 114ms, proxy.ts: 14ms, render: 148ms)
+ GET /avatars/sarah.jpg 404 in 275ms (compile: 130ms, proxy.ts: 15ms, render: 129ms)
+✓ Compiled in 250ms
+ GET / 200 in 120ms (compile: 51ms, proxy.ts: 18ms, render: 52ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1987µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 13ms (compile: 1910µs, proxy.ts: 1846µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1972µs, proxy.ts: 1881µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1964µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1936µs, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 13ms (compile: 1968µs, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 13ms (compile: 1891µs, proxy.ts: 1775µs, render: 10ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 21ms (compile: 4ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 22ms (compile: 10ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 1958µs, proxy.ts: 1905µs, render: 10ms)
+ GET / 200 in 15ms (compile: 1951µs, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1887µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1817µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1877µs, proxy.ts: 1816µs, render: 9ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 1952µs, render: 13ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 25ms (compile: 8ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 25ms (compile: 3ms, proxy.ts: 3ms, render: 19ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 3ms, render: 13ms)
+ GET / 200 in 33ms (compile: 20ms, proxy.ts: 3ms, render: 11ms)
+ GET / 200 in 19ms (compile: 4ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 14ms (compile: 1918µs, proxy.ts: 1979µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1879µs, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1891µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1942µs, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1937µs, render: 11ms)
+ GET / 200 in 18ms (compile: 2ms, proxy.ts: 1940µs, render: 14ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 3ms, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 1958µs, render: 12ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 1987µs, render: 12ms)
+ GET / 200 in 16ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 19ms (compile: 3ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 34ms (compile: 2ms, proxy.ts: 1986µs, render: 29ms)
+ GET / 200 in 16ms (compile: 3ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 11ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET /features 200 in 1237ms (compile: 1164ms, proxy.ts: 4ms, render: 69ms)
+ GET / 200 in 33ms (compile: 7ms, proxy.ts: 5ms, render: 21ms)
+ GET /avatars/sarah.jpg 404 in 349ms (compile: 62ms, proxy.ts: 3ms, render: 284ms)
+ GET /avatars/emily.jpg 404 in 153ms (compile: 26ms, proxy.ts: 5ms, render: 122ms)
+ GET /avatars/marcus.jpg 404 in 148ms (compile: 56ms, proxy.ts: 6ms, render: 86ms)
+ GET /avatars/david.jpg 404 in 142ms (compile: 87ms, proxy.ts: 3ms, render: 52ms)
+ GET / 200 in 24ms (compile: 4ms, proxy.ts: 4ms, render: 16ms)
+ GET / 200 in 29ms (compile: 3ms, proxy.ts: 3ms, render: 22ms)
+ GET / 200 in 20ms (compile: 2ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1994µs, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1975µs, render: 10ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 2ms, render: 13ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1947µs, render: 10ms)
+ GET / 200 in 17ms (compile: 2ms, proxy.ts: 1914µs, render: 13ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1897µs, render: 10ms)
+ GET / 200 in 16ms (compile: 1898µs, proxy.ts: 1951µs, render: 13ms)
+ GET / 200 in 13ms (compile: 1999µs, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 30ms (compile: 2ms, proxy.ts: 2ms, render: 26ms)
+ GET / 200 in 52ms (compile: 7ms, proxy.ts: 35ms, render: 10ms)
+ GET / 200 in 13ms (compile: 1979µs, proxy.ts: 1925µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 2ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 16ms)
+ GET / 200 in 13ms (compile: 1986µs, proxy.ts: 1994µs, render: 9ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 13ms (compile: 1945µs, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 14ms (compile: 1869µs, proxy.ts: 1942µs, render: 10ms)
+ GET / 200 in 25ms (compile: 1977µs, proxy.ts: 5ms, render: 18ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1866µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1997µs, proxy.ts: 1908µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 2ms, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1957µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1907µs, proxy.ts: 1911µs, render: 9ms)
+ GET / 200 in 19ms (compile: 7ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 13ms (compile: 1884µs, proxy.ts: 1821µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1941µs, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 14ms (compile: 1915µs, proxy.ts: 1807µs, render: 10ms)
+ GET / 200 in 13ms (compile: 1914µs, proxy.ts: 1798µs, render: 10ms)
+ GET / 200 in 23ms (compile: 2ms, proxy.ts: 2ms, render: 18ms)
+ GET / 200 in 13ms (compile: 1959µs, proxy.ts: 1887µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1781µs, render: 9ms)
+ GET / 200 in 13ms (compile: 2ms, proxy.ts: 1961µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1936µs, proxy.ts: 1842µs, render: 9ms)
+ GET / 200 in 13ms (compile: 1997µs, proxy.ts: 1938µs, render: 9ms)
+ GET / 200 in 25ms (compile: 2ms, proxy.ts: 13ms, render: 10ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 2ms, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1973µs, render: 11ms)
+ GET / 200 in 19ms (compile: 2ms, proxy.ts: 1901µs, render: 15ms)
+ GET / 200 in 13ms (compile: 1948µs, proxy.ts: 1932µs, render: 9ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1964µs, render: 11ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 4ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 22ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 21ms (compile: 3ms, proxy.ts: 3ms, render: 15ms)
+ GET / 200 in 28ms (compile: 3ms, proxy.ts: 3ms, render: 22ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1945µs, render: 10ms)
+ GET / 200 in 15ms (compile: 2ms, proxy.ts: 1959µs, render: 11ms)
+ GET / 200 in 18ms (compile: 3ms, proxy.ts: 3ms, render: 12ms)
+ GET / 200 in 14ms (compile: 2ms, proxy.ts: 1963µs, render: 10ms)
+ GET / 200 in 20ms (compile: 3ms, proxy.ts: 2ms, render: 15ms)
+ GET / 200 in 220ms (compile: 6ms, proxy.ts: 3ms, render: 210ms)
+[next-auth][warn][DEBUG_ENABLED] 
+https://next-auth.js.org/warnings#debug_enabled
+ GET /api/auth/session 200 in 150ms (compile: 115ms, render: 35ms)
+ GET /avatars/marcus.jpg 404 in 190ms (compile: 71ms, proxy.ts: 17ms, render: 103ms)
+ GET /avatars/emily.jpg 404 in 197ms (compile: 41ms, proxy.ts: 21ms, render: 136ms)
+ GET /avatars/sarah.jpg 404 in 194ms (compile: 61ms, proxy.ts: 18ms, render: 115ms)
+ GET /avatars/david.jpg 404 in 189ms (compile: 79ms, proxy.ts: 16ms, render: 94ms)
+ GET /login 200 in 91ms (compile: 65ms, proxy.ts: 3ms, render: 23ms)
+ GET /api/auth/providers 200 in 109ms (compile: 65ms, render: 43ms)
+ GET /api/auth/csrf 200 in 17ms (compile: 5ms, render: 12ms)
+(node:346) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[next-auth][error][SIGNIN_OAUTH_ERROR] 
+https://next-auth.js.org/errors#signin_oauth_error client_id is required {
+  error: {
+    message: 'client_id is required',
+    stack: 'TypeError: client_id is required\n' +
+      '    at new BaseClient (/home/z/my-project/.next/dev/server/chunks/node_modules_openid-client_d15f72b3._.js:1318:19)\n' +
+      '    at new Client (/home/z/my-project/.next/dev/server/chunks/node_modules_openid-client_d15f72b3._.js:2843:13)\n' +
+      '    at openidClient (/home/z/my-project/.next/dev/server/chunks/node_modules_next-auth_882d5fc4._.js:410:20)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n' +
+      '    at async getAuthorizationUrl (/home/z/my-project/.next/dev/server/chunks/node_modules_next-auth_882d5fc4._.js:1764:20)\n' +
+      '    at async Object.signin (/home/z/my-project/.next/dev/server/chunks/node_modules_next-auth_882d5fc4._.js:1846:30)\n' +
+      '    at async AuthHandler (/home/z/my-project/.next/dev/server/chunks/node_modules_next-auth_882d5fc4._.js:3294:36)\n' +
+      '    at async NextAuthRouteHandler (/home/z/my-project/.next/dev/server/chunks/node_modules_next-auth_882d5fc4._.js:3501:30)\n' +
+      '    at async NextAuth._args$ (/home/z/my-project/.next/dev/server/chunks/node_modules_next-auth_882d5fc4._.js:3536:24)\n' +
+      '    at async AppRouteRouteModule.do (/home/z/my-project/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:37866)\n' +
+      '    at async AppRouteRouteModule.handle (/home/z/my-project/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:45156)\n' +
+      '    at async responseGenerator (/home/z/my-project/.next/dev/server/chunks/node_modules_next_2741d3c7._.js:12018:38)\n' +
+      '    at async AppRouteRouteModule.handleResponse (/home/z/my-project/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:1:187713)\n' +
+      '    at async handleResponse (/home/z/my-project/.next/dev/server/chunks/node_modules_next_2741d3c7._.js:12081:32)\n' +
+      '    at async Module.handler (/home/z/my-project/.next/dev/server/chunks/node_modules_next_2741d3c7._.js:12134:13)\n' +
+      '    at async DevServer.renderToResponseWithComponentsImpl (/home/z/my-project/node_modules/next/dist/server/base-server.js:1422:9)\n' +
+      '    at async DevServer.renderPageComponent (/home/z/my-project/node_modules/next/dist/server/base-server.js:1474:24)\n' +
+      '    at async DevServer.renderToResponseImpl (/home/z/my-project/node_modules/next/dist/server/base-server.js:1524:32)\n' +
+      '    at async DevServer.pipeImpl (/home/z/my-project/node_modules/next/dist/server/base-server.js:1018:25)\n' +
+      '    at async NextNodeServer.handleCatchallRenderRequest (/home/z/my-project/node_modules/next/dist/server/next-server.js:395:17)\n' +
+      '    at async DevServer.handleRequestImpl (/home/z/my-project/node_modules/next/dist/server/base-server.js:909:17)\n' +
+      '    at async /home/z/my-project/node_modules/next/dist/server/dev/next-dev-server.js:387:20\n' +
+      '    at async Span.traceAsyncFn (/home/z/my-project/node_modules/next/dist/trace/trace.js:157:20)\n' +
+      '    at async DevServer.handleRequest (/home/z/my-project/node_modules/next/dist/server/dev/next-dev-server.js:383:24)\n' +
+      '    at async invokeRender (/home/z/my-project/node_modules/next/dist/server/lib/router-server.js:248:21)\n' +
+      '    at async handleRequest (/home/z/my-project/node_modules/next/dist/server/lib/router-server.js:447:24)\n' +
+      '    at async requestHandlerImpl (/home/z/my-project/node_modules/next/dist/server/lib/router-server.js:496:13)\n' +
+      '    at async Server.requestListener (/home/z/my-project/node_modules/next/dist/server/lib/start-server.js:226:13)',
+    name: 'TypeError'
+  },
+  providerId: 'google',
+  message: 'client_id is required'
+}
+ POST /api/auth/signin/google 200 in 79ms (compile: 4ms, render: 75ms)
+ GET /login 200 in 226ms (compile: 4ms, proxy.ts: 3ms, render: 219ms)
+ GET /api/auth/session 200 in 67ms (compile: 55ms, render: 12ms)
+ GET /signup 200 in 106ms (compile: 72ms, proxy.ts: 4ms, render: 30ms)
+ GET /login 200 in 24ms (compile: 3ms, proxy.ts: 3ms, render: 17ms)
+ GET / 200 in 17ms (compile: 4ms, proxy.ts: 3ms, render: 11ms)
+ GET /avatars/marcus.jpg 404 in 131ms (compile: 16ms, proxy.ts: 3ms, render: 112ms)
+ GET /avatars/sarah.jpg 404 in 129ms (compile: 46ms, proxy.ts: 1921µs, render: 81ms)
+ GET /avatars/emily.jpg 404 in 56ms (compile: 11ms, proxy.ts: 6ms, render: 38ms)
+ GET /avatars/david.jpg 404 in 44ms (compile: 8ms, proxy.ts: 1964µs, render: 34ms)
+ GET / 200 in 73ms (compile: 3ms, proxy.ts: 3ms, render: 67ms)
+ GET /api/auth/session 200 in 81ms (compile: 56ms, render: 25ms)
+ GET /avatars/emily.jpg 404 in 237ms (compile: 81ms, proxy.ts: 17ms, render: 139ms)
+ GET /avatars/marcus.jpg 404 in 243ms (compile: 50ms, proxy.ts: 18ms, render: 175ms)
+ GET /avatars/sarah.jpg 404 in 236ms (compile: 91ms, proxy.ts: 17ms, render: 128ms)
+ GET /avatars/david.jpg 404 in 241ms (compile: 64ms, proxy.ts: 17ms, render: 160ms)
+ GET /login 200 in 23ms (compile: 5ms, proxy.ts: 3ms, render: 15ms)
+ GET /signup 200 in 27ms (compile: 11ms, proxy.ts: 3ms, render: 13ms)
+ GET /login 200 in 20ms (compile: 3ms, proxy.ts: 3ms, render: 14ms)
+ GET / 200 in 20ms (compile: 6ms, proxy.ts: 3ms, render: 11ms)
+ GET /avatars/sarah.jpg 404 in 116ms (compile: 7ms, proxy.ts: 3ms, render: 106ms)
+ GET /avatars/marcus.jpg 404 in 76ms (compile: 8ms, proxy.ts: 5ms, render: 63ms)
+ GET /avatars/emily.jpg 404 in 81ms (compile: 23ms, proxy.ts: 4ms, render: 54ms)
+ GET /avatars/david.jpg 404 in 47ms (compile: 10ms, proxy.ts: 3ms, render: 34ms)
+✓ Compiled in 147ms
+✓ Compiled in 310ms
+ GET / 200 in 392ms (compile: 59ms, proxy.ts: 3ms, render: 330ms)
+ GET / 200 in 91ms (compile: 59ms, proxy.ts: 6ms, render: 26ms)
+ GET / 200 in 106ms (compile: 15ms, proxy.ts: 6ms, render: 86ms)
+ GET /api/auth/session 200 in 88ms (compile: 62ms, render: 26ms)
+ GET /avatars/emily.jpg 404 in 544ms (compile: 262ms, proxy.ts: 11ms, render: 271ms)
+ GET /avatars/david.jpg 404 in 533ms (compile: 383ms, proxy.ts: 4ms, render: 146ms)
+ GET /avatars/sarah.jpg 404 in 556ms (compile: 407ms, proxy.ts: 18ms, render: 131ms)
+ GET /avatars/marcus.jpg 404 in 549ms (compile: 424ms, proxy.ts: 12ms, render: 113ms)
+ GET / 200 in 75ms (compile: 4ms, proxy.ts: 3ms, render: 68ms)
+ GET /api/auth/session 200 in 92ms (compile: 78ms, render: 14ms)
+ GET /avatars/david.jpg 404 in 181ms (compile: 33ms, proxy.ts: 4ms, render: 144ms)
+ GET /avatars/sarah.jpg 404 in 198ms (compile: 88ms, proxy.ts: 9ms, render: 101ms)
+ GET /avatars/emily.jpg 404 in 186ms (compile: 57ms, proxy.ts: 3ms, render: 127ms)
+ GET /avatars/marcus.jpg 404 in 197ms (compile: 97ms, proxy.ts: 9ms, render: 91ms)
+ GET / 200 in 59ms (compile: 4ms, proxy.ts: 3ms, render: 53ms)
+ GET /api/auth/session 200 in 110ms (compile: 63ms, render: 46ms)
+ GET /avatars/sarah.jpg 404 in 109ms (compile: 24ms, proxy.ts: 9ms, render: 76ms)
+ GET /avatars/marcus.jpg 404 in 101ms (compile: 53ms, proxy.ts: 4ms, render: 44ms)
+ GET /avatars/david.jpg 404 in 78ms (compile: 8ms, proxy.ts: 4ms, render: 66ms)
+ GET /avatars/emily.jpg 404 in 40ms (compile: 9ms, proxy.ts: 4ms, render: 27ms)
+ GET / 200 in 271ms (compile: 71ms, proxy.ts: 3ms, render: 196ms)
+ GET /api/auth/session 200 in 77ms (compile: 63ms, render: 15ms)
+ GET /avatars/marcus.jpg 404 in 385ms (compile: 151ms, proxy.ts: 5ms, render: 228ms)
+ GET /avatars/sarah.jpg 404 in 380ms (compile: 109ms, proxy.ts: 17ms, render: 254ms)
+ GET /avatars/emily.jpg 404 in 404ms (compile: 181ms, proxy.ts: 9ms, render: 214ms)
+ GET /avatars/david.jpg 404 in 402ms (compile: 196ms, proxy.ts: 9ms, render: 196ms)
+ GET / 200 in 71ms (compile: 4ms, proxy.ts: 3ms, render: 64ms)
+ GET /api/auth/session 200 in 85ms (compile: 59ms, render: 26ms)
+ GET /avatars/david.jpg 404 in 257ms (compile: 68ms, proxy.ts: 15ms, render: 174ms)
+ GET /avatars/marcus.jpg 404 in 236ms (compile: 35ms, proxy.ts: 7ms, render: 195ms)
+ GET /avatars/sarah.jpg 404 in 254ms (compile: 89ms, proxy.ts: 13ms, render: 152ms)
+ GET /avatars/emily.jpg 404 in 252ms (compile: 103ms, proxy.ts: 13ms, render: 136ms)
+ GET /dashboard 200 in 2.8s (compile: 2.5s, proxy.ts: 3ms, render: 239ms)
+ GET / 200 in 90ms (compile: 24ms, proxy.ts: 4ms, render: 63ms)
+ GET /api/auth/session 200 in 100ms (compile: 89ms, render: 11ms)
+ GET /avatars/sarah.jpg 404 in 148ms (compile: 24ms, proxy.ts: 4ms, render: 120ms)
+ GET /avatars/marcus.jpg 404 in 77ms (compile: 20ms, proxy.ts: 7ms, render: 50ms)
+ GET /api/auth/session 200 in 9ms (compile: 3ms, render: 6ms)
+ GET /avatars/emily.jpg 404 in 103ms (compile: 8ms, proxy.ts: 3ms, render: 92ms)
+ GET /avatars/david.jpg 404 in 45ms (compile: 11ms, proxy.ts: 4ms, render: 30ms)
+✓ Compiled in 138ms
+✓ Compiled in 126ms
+ GET / 200 in 96ms (compile: 9ms, render: 87ms)
+ GET /api/auth/session 200 in 76ms (compile: 65ms, render: 12ms)
+ GET /avatars/emily.jpg 404 in 182ms (compile: 36ms, render: 146ms)
+ GET /avatars/sarah.jpg 404 in 187ms (compile: 55ms, render: 132ms)
+ GET /avatars/david.jpg 404 in 181ms (compile: 15ms, render: 166ms)
+ GET /avatars/marcus.jpg 404 in 198ms (compile: 79ms, render: 120ms)
+✓ Compiled in 202ms
+==========================================
+[2026-03-16 16:28:25] Starting: bun install
+==========================================
+[BUN] Installing dependencies...
+==========================================
+[2026-03-16 16:28:25] Starting: bun install
+==========================================
+[0.12ms] ".env"
+bun install v1.3.10 (30e609e0)
+[BUN] Installing dependencies...
+[0.07ms] ".env"
+bun install v1.3.10 (30e609e0)
+error: Failed to link json5: EEXIST
+
+error: Failed to link semver: EEXIST
+PathAlreadyExists: failed copying files from cache to destination for package clean-set
+FileNotFound: failed copying files from cache to destination for package @lexical/html
+FileNotFound: failed copying files from cache to destination for package @lexical/code
+PathAlreadyExists: failed copying files from cache to destination for package @floating-ui/react
+FileNotFound: failed copying files from cache to destination for package @lexical/history
+FileNotFound: failed copying files from cache to destination for package @lexical/table
+FileNotFound: failed copying files from cache to destination for package @codemirror/search
+FileNotFound: failed copying files from cache to destination for package mdast-util-mdx-expression
+PathAlreadyExists: failed copying files from cache to destination for package vfile-message
+FileNotFound: failed copying files from cache to destination for package mdast-util-phrasing
+PathAlreadyExists: failed copying files from cache to destination for package zwitch
+PathAlreadyExists: failed copying files from cache to destination for package micromark-extension-mdxjs-esm
+FileNotFound: failed copying files from cache to destination for package diff
+FileNotFound: failed copying files from cache to destination for package react-remove-scroll-bar
+FileNotFound: failed copying files from cache to destination for package react-style-singleton
+FileNotFound: failed copying files from cache to destination for package use-callback-ref
+PathAlreadyExists: failed copying files from cache to destination for package object-hash
+FileNotFound: failed copying files from cache to destination for package @swc/counter
+FileNotFound: failed copying files from cache to destination for package @formatjs/fast-memoize
+PathAlreadyExists: failed copying files from cache to destination for package effect
+FileNotFound: failed copying files from cache to destination for package @babel/helpers
+FileNotFound: failed copying files from cache to destination for package static-browser-server
+FileNotFound: failed copying files from cache to destination for package sade
+FileNotFound: failed copying files from cache to destination for package unist-util-position-from-estree
+FileNotFound: failed copying files from cache to destination for package estree-util-visit
+FileNotFound: failed copying files from cache to destination for package get-nonce
+FileNotFound: failed copying files from cache to destination for package detect-node-es
+PathAlreadyExists: failed copying files from cache to destination for package @formatjs/ecma402-abstract
+FileNotFound: failed copying files from cache to destination for package rc9
+FileNotFound: failed copying files from cache to destination for package which-typed-array
+PathAlreadyExists: failed copying files from cache to destination for package functions-have-names
+FileNotFound: failed copying files from cache to destination for package @babel/helper-validator-identifier
+FileNotFound: failed copying files from cache to destination for package @babel/helper-string-parser
+PathAlreadyExists: failed copying files from cache to destination for package is-boolean-object
+PathAlreadyExists: failed copying files from cache to destination for package escalade
+FileNotFound: failed copying files from cache to destination for package esniff
+PathAlreadyExists: failed copying files from cache to destination for package is-async-function
+FileNotFound: failed copying files from cache to destination for package is-finalizationregistry
+PathAlreadyExists: failed copying files from cache to destination for package which-collection
+FileNotFound: failed copying files from cache to destination for package event-emitter
+FileNotFound: failed copying files from cache to destination for package is-map
+FileNotFound: failed copying files from cache to destination for package @radix-ui/react-context
+PathAlreadyExists: failed copying files from cache to destination for package @radix-ui/react-context
+FileNotFound: failed copying files from cache to destination for package @radix-ui/react-primitive
+FileNotFound: failed copying files from cache to destination for package @lexical/overflow
+FileNotFound: failed copying files from cache to destination for package @floating-ui/react-dom
+FileNotFound: failed copying files from cache to destination for package @radix-ui/react-use-rect
+FileNotFound: failed copying files from cache to destination for package ccount
+FileNotFound: failed copying files from cache to destination for package parse-entities
+FileNotFound: failed copying files from cache to destination for package stringify-entities
+FileNotFound: failed copying files from cache to destination for package mdast-util-to-string
+FileNotFound: failed copying files from cache to destination for package micromark
+FileNotFound: failed copying files from cache to destination for package @types/estree-jsx
+PathAlreadyExists: failed copying files from cache to destination for package uvu
+PathAlreadyExists: failed copying files from cache to destination for package @parcel/watcher-linux-x64-glibc
+PathAlreadyExists: failed copying files from cache to destination for package @parcel/watcher-linux-x64-musl
+PathAlreadyExists: failed copying files from cache to destination for package node-addon-api
+PathAlreadyExists: failed copying files from cache to destination for package @swc/core-linux-x64-musl
+FileNotFound: failed copying files from cache to destination for package intl-messageformat
+FileNotFound: failed copying files from cache to destination for package is-regex
+FileNotFound: failed copying files from cache to destination for package @typescript-eslint/scope-manager
+FileNotFound: failed copying files from cache to destination for package @lezer/javascript
+FileNotFound: failed copying files from cache to destination for package @lezer/json
+FileNotFound: failed copying files from cache to destination for package @lezer/php
+FileNotFound: failed copying files from cache to destination for package @lezer/rust
+FileNotFound: failed copying files from cache to destination for package @lezer/xml
+FileNotFound: failed copying files from cache to destination for package @lezer/yaml
+PathAlreadyExists: failed copying files from cache to destination for package es6-symbol
+FileNotFound: failed copying files from cache to destination for package micromark-util-encode
+FileNotFound: failed copying files from cache to destination for package micromark-util-subtokenize
+PathAlreadyExists: failed copying files from cache to destination for package fast-check
+FileNotFound: failed copying files from cache to destination for package object-inspect
+FileNotFound: failed copying files from cache to destination for package set-proto
+FileNotFound: failed copying files from cache to destination for package stop-iteration-iterator
+FileNotFound: failed copying files from cache to destination for package string.prototype.trim
+FileNotFound: failed copying files from cache to destination for package string.prototype.trimstart
+FileNotFound: failed copying files from cache to destination for package typed-array-buffer
+PathAlreadyExists: failed copying files from cache to destination for package side-channel-map
+FileNotFound: failed copying files from cache to destination for package @babel/compat-data
+FileNotFound: failed copying files from cache to destination for package browserslist
+PathAlreadyExists: failed copying files from cache to destination for package @open-draft/deferred-promise
+FileNotFound: failed copying files from cache to destination for package queue-microtask
+
+219 packages installed [1.71s]
+Failed to install 38 packages
+==========================================
+[2026-03-17 16:36:23] Starting: bun install
+==========================================
+[BUN] Installing dependencies...
+[0.09ms] ".env"
+bun install v1.3.10 (30e609e0)
+error: Failed to link resolve: EEXIST
+==========================================
+[2026-03-20 10:41:36] Starting: bun install
+==========================================
+[BUN] Installing dependencies...
+[0.09ms] ".env"
+bun install v1.3.10 (30e609e0)
+
+425 packages installed [2.96s]
+==========================================
+[2026-03-20 10:41:39] Completed: bun install
+[LOG] Step: bun install | Duration: 3s
+==========================================
+
+==========================================
+[2026-03-20 10:41:39] Starting: bun run db:push
+==========================================
+[BUN] Setting up database...
+$ prisma db push
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "custom.db" at "file:/home/z/my-project/db/custom.db"
+
+The database is already in sync with the Prisma schema.
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v6.19.2) to ./node_modules/@prisma/client in 323ms
+
+==========================================
+[2026-03-20 10:41:41] Completed: bun run db:push
+[LOG] Step: bun run db:push | Duration: 2s
+==========================================
+
+==========================================
+[2026-03-20 10:41:41] Starting: Starting Next.js dev server
+==========================================
+[BUN] Starting development server...
+==========================================
+$ next dev -p 3000 2>&1 | tee dev.log
+[2026-03-20 10:41:41] Completed: Starting Next.js dev server
+[LOG] Step: Starting Next.js dev server | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-20 10:41:41] Starting: Waiting for Next.js dev server
+==========================================
+Waiting for Next.js dev server to be ready on localhost:3000...
+Attempt 1/60: Next.js dev server not ready yet, waiting...
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.4.219:3000
+- Environments: .env
+
+✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+✓ Ready in 1107ms
+○ Compiling / ...
+Attempt 2/60: Next.js dev server not ready yet, waiting...
+ GET / 200 in 4.5s (compile: 4.1s, render: 340ms)
+ GET / 200 in 4.5s (compile: 4.4s, render: 83ms)
+ GET / 200 in 51ms (compile: 3ms, render: 47ms)
+Next.js dev server is ready!
+==========================================
+[2026-03-20 10:41:48] Completed: Waiting for Next.js dev server
+[LOG] Step: Waiting for Next.js dev server | Duration: 7s
+==========================================
+
+==========================================
+[2026-03-20 10:41:48] Starting: Health check
+==========================================
+[BUN] Performing health check...
+ GET / 200 in 70ms (compile: 2ms, render: 68ms)
+[BUN] Health check passed
+==========================================
+[2026-03-20 10:41:48] Completed: Health check
+[LOG] Step: Health check | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-20 10:41:48] Starting: Starting mini-services
+==========================================
+Found mini-services directory, scanning for sub-services...
+Mini-services startup completed. Started 0 service(s).
+==========================================
+[2026-03-20 10:41:48] Completed: Starting mini-services
+[LOG] Step: Starting mini-services | Duration: 0s
+==========================================
+
+Next.js dev server is running in background (PID: 606).
+Use 'kill 606' to stop it.
+[next-auth][warn][NEXTAUTH_URL] 
+https://next-auth.js.org/warnings#nextauth_url
+[next-auth][warn][NO_SECRET] 
+https://next-auth.js.org/warnings#no_secret
+[next-auth][warn][DEBUG_ENABLED] 
+https://next-auth.js.org/warnings#debug_enabled
+ GET /api/auth/session 200 in 1420ms (compile: 1389ms, render: 31ms)
+ GET / 200 in 88ms (compile: 6ms, render: 83ms)
+ GET /api/auth/session 200 in 84ms (compile: 65ms, render: 19ms)
+ GET /dashboard/analytics 200 in 2.3s (compile: 2.3s, render: 29ms)
+ GET /dashboard/abandoned-carts 200 in 751ms (compile: 733ms, render: 18ms)
+ GET /dashboard/courses 200 in 494ms (compile: 476ms, render: 19ms)
+ GET /dashboard/discounts 200 in 1083ms (compile: 1059ms, render: 23ms)
+ GET /api/discounts 200 in 175ms (compile: 167ms, render: 8ms)
+ GET /dashboard/community 200 in 520ms (compile: 494ms, render: 27ms)
+ GET /dashboard/insights 200 in 372ms (compile: 358ms, render: 14ms)
+ GET /api/insights 200 in 17.9s (compile: 119ms, render: 17.8s)
+ GET /dashboard/certificates 200 in 598ms (compile: 576ms, render: 22ms)
+ GET /verify/CH-M1K2J3N4P5 200 in 943ms (compile: 820ms, render: 123ms)
+ GET /api/auth/session 200 in 71ms (compile: 53ms, render: 18ms)
+ GET /api/auth/session 200 in 13ms (compile: 3ms, render: 10ms)
+ GET / 200 in 81ms (compile: 7ms, render: 74ms)
+ GET /api/auth/session 200 in 76ms (compile: 61ms, render: 15ms)
+ GET / 200 in 83ms (compile: 4ms, render: 79ms)
+ GET /api/auth/session 200 in 64ms (compile: 48ms, render: 17ms)
+ GET / 200 in 80ms (compile: 4ms, render: 76ms)
+ GET /api/auth/session 200 in 62ms (compile: 51ms, render: 11ms)
+ GET /dashboard/products 200 in 676ms (compile: 648ms, render: 27ms)
+ GET / 200 in 84ms (compile: 5ms, render: 78ms)
+ GET /api/auth/session 200 in 89ms (compile: 79ms, render: 11ms)
+ GET / 200 in 75ms (compile: 5ms, render: 70ms)
+ GET /api/auth/session 200 in 65ms (compile: 54ms, render: 10ms)
+ GET / 200 in 71ms (compile: 4ms, render: 67ms)
+ GET /api/auth/session 200 in 86ms (compile: 73ms, render: 12ms)
+ GET / 200 in 71ms (compile: 3ms, render: 68ms)
+ GET /api/auth/session 200 in 73ms (compile: 55ms, render: 18ms)
+ GET / 200 in 60ms (compile: 3ms, render: 57ms)
+ GET /api/auth/session 200 in 74ms (compile: 58ms, render: 17ms)
+ GET / 200 in 60ms (compile: 4ms, render: 56ms)
+ GET /api/auth/session 200 in 62ms (compile: 52ms, render: 10ms)
+ GET /dashboard/courses 200 in 115ms (compile: 91ms, render: 23ms)
+ GET /dashboard/learn 200 in 708ms (compile: 662ms, render: 46ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.4.219:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 1155ms
+ GET /dashboard/learn 200 in 3.2s (compile: 2.9s, render: 321ms)
+prisma:query SELECT `main`.`courses`.`id`, `main`.`courses`.`title`, `main`.`courses`.`description`, `main`.`courses`.`image`, `main`.`courses`.`price`, `main`.`courses`.`published`, `main`.`courses`.`enrollmentCount`, `main`.`courses`.`rating`, `main`.`courses`.`launchMode`, `main`.`courses`.`launchDate`, `main`.`courses`.`earlyBirdPrice`, `main`.`courses`.`earlyBirdEndDate`, `main`.`courses`.`waitlistEnabled`, `main`.`courses`.`createdAt`, `main`.`courses`.`updatedAt`, `main`.`courses`.`creatorId` FROM `main`.`courses` WHERE `main`.`courses`.`creatorId` = ? ORDER BY `main`.`courses`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/courses?enrolled=true 200 in 916ms (compile: 889ms, render: 27ms)
+[next-auth][warn][NEXTAUTH_URL] 
+https://next-auth.js.org/warnings#nextauth_url
+[next-auth][warn][NO_SECRET] 
+https://next-auth.js.org/warnings#no_secret
+[next-auth][warn][DEBUG_ENABLED] 
+https://next-auth.js.org/warnings#debug_enabled
+ GET /api/auth/session 200 in 1382ms (compile: 1363ms, render: 19ms)
+ GET / 200 in 169ms (compile: 27ms, render: 142ms)
+ GET /api/auth/session 200 in 63ms (compile: 45ms, render: 17ms)
+ GET /dashboard/analytics 200 in 798ms (compile: 770ms, render: 28ms)
+ GET /dashboard/community 200 in 200ms (compile: 174ms, render: 27ms)
+ GET /dashboard/affiliates 200 in 1177ms (compile: 1155ms, render: 22ms)
+ GET /api/affiliates/stats 200 in 124ms (compile: 117ms, render: 7ms)
+ GET /dashboard/waitlist 200 in 1050ms (compile: 1017ms, render: 33ms)
+ GET / 200 in 73ms (compile: 5ms, render: 68ms)
+ GET /api/auth/session 200 in 125ms (compile: 108ms, render: 17ms)
+ GET / 200 in 78ms (compile: 8ms, render: 70ms)
+ GET /api/auth/session 200 in 55ms (compile: 44ms, render: 10ms)
+ GET / 200 in 88ms (compile: 9ms, render: 79ms)
+ GET /api/auth/session 200 in 61ms (compile: 44ms, render: 17ms)
+ GET / 200 in 77ms (compile: 5ms, render: 72ms)
+ GET /api/auth/session 200 in 55ms (compile: 44ms, render: 11ms)
+ GET / 200 in 82ms (compile: 9ms, render: 73ms)
+ GET /api/auth/session 200 in 55ms (compile: 44ms, render: 10ms)
+ GET / 200 in 75ms (compile: 7ms, render: 68ms)
+ GET /api/auth/session 200 in 53ms (compile: 44ms, render: 8ms)
+ GET / 200 in 76ms (compile: 8ms, render: 68ms)
+ GET /api/auth/session 200 in 52ms (compile: 43ms, render: 10ms)
