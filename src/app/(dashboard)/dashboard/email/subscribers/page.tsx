@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { ArrowLeft, Plus } from "lucide-react"
 
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout"
+
 import { SubscriberList } from "@/components/dashboard/email/SubscriberList"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -16,8 +16,7 @@ export default function SubscribersPage() {
   const [subscribers, setSubscribers] = React.useState(mockSubscribers)
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
@@ -89,6 +88,5 @@ export default function SubscribersPage() {
           </CardContent>
         </Card>
       </div>
-    </DashboardLayout>
   )
 }

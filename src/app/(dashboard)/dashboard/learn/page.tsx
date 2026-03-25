@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { useGhostMode } from '@/hooks/useGhostMode';
 
 interface EnrolledCourse {
@@ -115,8 +115,7 @@ export default function LearnPage() {
   const notStartedCourses = courses.filter((c) => c.progress === 0);
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="max-w-6xl mx-auto px-4 py-6 space-y-8">
+    <div className="max-w-6xl mx-auto px-4 py-6 space-y-8">
         {/* Header */}
         <div>
           <h1 className="text-2xl font-bold">My Learning</h1>
@@ -234,7 +233,6 @@ export default function LearnPage() {
           </>
         )}
       </div>
-    </DashboardLayout>
   );
 }
 

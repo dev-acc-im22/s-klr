@@ -27,7 +27,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { useGhostMode } from '@/hooks/useGhostMode';
 
 const postTypes = [
@@ -105,8 +105,7 @@ export default function NewCommunityPostPage() {
   const selectedType = postTypes.find(t => t.value === formData.type);
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="max-w-3xl mx-auto space-y-6">
+    <div className="max-w-3xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" asChild>
@@ -341,6 +340,5 @@ export default function NewCommunityPostPage() {
           </div>
         </form>
       </div>
-    </DashboardLayout>
   );
 }

@@ -25,7 +25,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { StarRating } from '@/components/dashboard/reviews';
 import { useToast } from '@/hooks/use-toast';
 
@@ -251,8 +251,7 @@ export default function ReviewsPage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Reviews</h1>
@@ -505,6 +504,5 @@ export default function ReviewsPage() {
           </DialogContent>
         </Dialog>
       </div>
-    </DashboardLayout>
   );
 }

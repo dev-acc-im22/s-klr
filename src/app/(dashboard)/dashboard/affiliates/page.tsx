@@ -27,7 +27,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { useGhostMode } from '@/hooks/useGhostMode';
 
 export default function AffiliatesPage() {
@@ -35,8 +35,7 @@ export default function AffiliatesPage() {
   const [activeTab, setActiveTab] = useState('overview');
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -235,6 +234,5 @@ export default function AffiliatesPage() {
           </TabsContent>
         </Tabs>
       </div>
-    </DashboardLayout>
   );
 }

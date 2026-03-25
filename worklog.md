@@ -654,3 +654,58 @@ Implement Waitlist/Launch Mode for CreatorHub - allows creators to collect email
    - Social sharing for referrals
    - Statistics dashboard with charts
    - Product-specific waitlists
+
+---
+## Task ID: 5 - Fix Sidebar Menu Routing Issues
+### Work Task
+Ensure all sidebar menu items are clickable and mapped to correct web pages.
+
+### Issues Found
+- JSX parsing errors in 4 dashboard pages caused routes to fail
+- Dialogs were placed outside the return statement
+- Extra closing `</div>` tags caused premature closing of parent containers
+
+### Files Fixed
+1. `coaching/schedule/page.tsx` - Wrapped return with React Fragment for Dialog placement
+2. `courses/[id]/page.tsx` - Wrapped return with React Fragment for Dialog placement
+3. `learn/[courseId]/[lessonId]/page.tsx` - Removed extra `</div>` closing tag
+4. `learn/[courseId]/page.tsx` - Removed extra `</div>` closing tag
+
+### Verification
+All 21 dashboard routes tested and returning 200 OK:
+- `/dashboard` - 200
+- `/dashboard/products` - 200
+- `/dashboard/courses` - 200
+- `/dashboard/orders` - 200
+- `/dashboard/discounts` - 200
+- `/dashboard/reviews` - 200
+- `/dashboard/learn` - 200
+- `/dashboard/certificates` - 200
+- `/dashboard/email` - 200
+- `/dashboard/email-templates` - 200
+- `/dashboard/instagram` - 200
+- `/dashboard/affiliates` - 200
+- `/dashboard/abandoned-carts` - 200
+- `/dashboard/waitlist` - 200
+- `/dashboard/community` - 200
+- `/dashboard/coaching` - 200
+- `/dashboard/bookings` - 200
+- `/dashboard/analytics` - 200
+- `/dashboard/insights` - 200
+- `/dashboard/webhooks` - 200
+- `/dashboard/settings` - 200
+
+### Sidebar Menu Structure
+| Category | Menu Items |
+|----------|------------|
+| **Overview** | Dashboard |
+| **Store** | Products, Courses, Orders, Discounts, Reviews |
+| **Learning** | My Learning, Certificates |
+| **Marketing** | Email Marketing, Email Templates, Instagram AutoDMs, Affiliates, Abandoned Carts, Waitlist |
+| **Community & Services** | Community, Coaching, Bookings |
+| **Insights** | Analytics, AI Insights |
+| **Developer** | Webhooks |
+| **Footer** | Settings |
+
+### Lint Status
+✅ All checks passing (0 errors)

@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { formatCurrency } from '@/lib/utils';
 
 interface Course {
@@ -109,8 +109,7 @@ export default function CoursesPage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -237,6 +236,5 @@ export default function CoursesPage() {
         </div>
       )}
       </div>
-    </DashboardLayout>
   );
 }

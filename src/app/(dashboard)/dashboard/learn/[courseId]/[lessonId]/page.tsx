@@ -17,7 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Skeleton } from '@/components/ui/skeleton';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { useGhostMode } from '@/hooks/useGhostMode';
 import { cn } from '@/lib/utils';
 
@@ -258,28 +258,24 @@ export default function LearnCoursePage() {
 
   if (loading) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="flex items-center justify-center min-h-[60vh]">
-          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        </div>
-      </DashboardLayout>
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
     );
   }
 
   if (!course) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="flex flex-col items-center justify-center min-h-[60vh]">
-          <BookOpen className="h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-xl font-semibold mb-2">Course not found</h2>
-          <p className="text-muted-foreground mb-4">
-            This course doesn&apos;t exist or you don&apos;t have access.
-          </p>
-          <Button asChild>
-            <Link href="/dashboard/courses">Browse Courses</Link>
-          </Button>
-        </div>
-      </DashboardLayout>
+      <div className="flex flex-col items-center justify-center min-h-[60vh]">
+        <BookOpen className="h-12 w-12 text-muted-foreground mb-4" />
+        <h2 className="text-xl font-semibold mb-2">Course not found</h2>
+        <p className="text-muted-foreground mb-4">
+          This course doesn&apos;t exist or you don&apos;t have access.
+        </p>
+        <Button asChild>
+          <Link href="/dashboard/courses">Browse Courses</Link>
+        </Button>
+      </div>
     );
   }
 
@@ -296,8 +292,7 @@ export default function LearnCoursePage() {
   );
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
         {/* Course Progress Header */}
         <div className="sticky top-0 z-40 bg-card border-b">
           <div className="max-w-7xl mx-auto px-4 py-3">
@@ -519,6 +514,5 @@ export default function LearnCoursePage() {
           </div>
         </div>
       </div>
-    </DashboardLayout>
   );
 }

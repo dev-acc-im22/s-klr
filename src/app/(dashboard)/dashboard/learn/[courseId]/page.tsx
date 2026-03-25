@@ -17,7 +17,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { useGhostMode } from '@/hooks/useGhostMode';
 import { cn } from '@/lib/utils';
 
@@ -243,36 +243,31 @@ export default function LearnCourseOverviewPage() {
 
   if (loading) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="flex items-center justify-center min-h-[60vh]">
-          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        </div>
-      </DashboardLayout>
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
     );
   }
 
   if (!course) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="flex flex-col items-center justify-center min-h-[60vh]">
-          <BookOpen className="h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-xl font-semibold mb-2">Course not found</h2>
-          <p className="text-muted-foreground mb-4">
-            This course doesn&apos;t exist or you don&apos;t have access.
-          </p>
-          <Button asChild>
-            <Link href="/dashboard/courses">Browse Courses</Link>
-          </Button>
-        </div>
-      </DashboardLayout>
+      <div className="flex flex-col items-center justify-center min-h-[60vh]">
+        <BookOpen className="h-12 w-12 text-muted-foreground mb-4" />
+        <h2 className="text-xl font-semibold mb-2">Course not found</h2>
+        <p className="text-muted-foreground mb-4">
+          This course doesn&apos;t exist or you don&apos;t have access.
+        </p>
+        <Button asChild>
+          <Link href="/dashboard/courses">Browse Courses</Link>
+        </Button>
+      </div>
     );
   }
 
   const isComplete = course.progress === 100;
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <div className="relative h-48 sm:h-64 bg-gradient-to-b from-primary/20 to-background">
           <div className="absolute inset-0">
@@ -442,6 +437,5 @@ export default function LearnCourseOverviewPage() {
           </Card>
         </div>
       </div>
-    </DashboardLayout>
   );
 }

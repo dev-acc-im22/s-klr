@@ -35,7 +35,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
+;
 import { useGhostMode } from "@/hooks/useGhostMode";
 import {
   CoachingPackageForm,
@@ -108,8 +108,8 @@ export default function SchedulePage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <>
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-4">
@@ -469,6 +469,6 @@ export default function SchedulePage() {
           />
         </DialogContent>
       </Dialog>
-    </DashboardLayout>
+    </>
   );
 }

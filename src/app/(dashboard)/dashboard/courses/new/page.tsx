@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { useToast } from '@/hooks/use-toast';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { useGhostMode } from '@/hooks/useGhostMode';
 
 interface Module {
@@ -99,8 +99,7 @@ export default function NewCoursePage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" asChild>
@@ -304,6 +303,5 @@ export default function NewCoursePage() {
         </div>
       </form>
       </div>
-    </DashboardLayout>
   );
 }

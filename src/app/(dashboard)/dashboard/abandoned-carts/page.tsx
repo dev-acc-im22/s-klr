@@ -14,7 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { RecoveryStats } from '@/components/dashboard/cart/RecoveryStats';
 import { AbandonedCartsTable } from '@/components/dashboard/cart/AbandonedCartsTable';
 import { RecoveryEmailPreview } from '@/components/dashboard/cart/RecoveryEmailPreview';
@@ -138,8 +138,7 @@ export default function AbandonedCartsPage() {
   const recoveredCarts = carts.filter((c) => c.status === 'recovered');
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -356,6 +355,5 @@ export default function AbandonedCartsPage() {
           </TabsContent>
         </Tabs>
       </div>
-    </DashboardLayout>
   );
 }

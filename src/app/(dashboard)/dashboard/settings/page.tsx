@@ -90,8 +90,7 @@ export default function SettingsPage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Settings</h1>
@@ -333,7 +332,6 @@ export default function SettingsPage() {
           Save Changes
         </Button>
       </div>
-      </div>
-    </DashboardLayout>
+    </div>
   );
 }

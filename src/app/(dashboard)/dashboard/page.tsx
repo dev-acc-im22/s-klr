@@ -31,7 +31,7 @@ import {
   Activity,
 } from "lucide-react"
 
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout"
+
 import { StatsCard } from "@/components/dashboard/StatsCard"
 import { RevenueChart } from "@/components/dashboard/RevenueChart"
 import { RecentOrders } from "@/components/dashboard/RecentOrders"
@@ -331,8 +331,7 @@ export default function DashboardPage() {
   ]
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Welcome Section */}
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-3">
@@ -833,6 +832,5 @@ export default function DashboardPage() {
         {/* Recent Orders Table */}
         <RecentOrders />
       </div>
-    </DashboardLayout>
   )
 }

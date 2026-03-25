@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useGhostMode } from '@/hooks/useGhostMode';
 import { useToast } from '@/hooks/use-toast';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { CertificateTemplate } from '@/components/dashboard/certificates';
 import { format } from 'date-fns';
 import html2canvas from 'html2canvas';
@@ -176,8 +176,7 @@ export default function CertificatesPage() {
   );
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Hidden certificate for download */}
         {selectedCertificate && (
           <div className="absolute -left-[9999px] top-0">
@@ -331,27 +330,26 @@ export default function CertificatesPage() {
             ))}
           </div>
         )}
-      </div>
 
-      {/* Certificate Preview Dialog */}
-      <Dialog open={!!selectedCertificate && !downloading} onOpenChange={() => setSelectedCertificate(null)}>
-        <DialogContent className="max-w-[850px] max-h-[90vh] overflow-auto">
-          <DialogHeader>
-            <DialogTitle>Certificate Preview</DialogTitle>
-          </DialogHeader>
-          <div className="flex justify-center p-4 bg-gray-100 rounded-lg">
-            {selectedCertificate && (
-              <CertificateTemplate
-                studentName={selectedCertificate.studentName}
-                courseName={selectedCertificate.courseName}
-                instructorName={selectedCertificate.instructorName}
-                completionDate={format(new Date(selectedCertificate.issuedAt), 'MMMM d, yyyy')}
-                certificateNumber={selectedCertificate.certificateNumber}
-              />
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
-    </DashboardLayout>
+        {/* Certificate Preview Dialog */}
+        <Dialog open={!!selectedCertificate && !downloading} onOpenChange={() => setSelectedCertificate(null)}>
+          <DialogContent className="max-w-[850px] max-h-[90vh] overflow-auto">
+            <DialogHeader>
+              <DialogTitle>Certificate Preview</DialogTitle>
+            </DialogHeader>
+            <div className="flex justify-center p-4 bg-gray-100 rounded-lg">
+              {selectedCertificate && (
+                <CertificateTemplate
+                  studentName={selectedCertificate.studentName}
+                  courseName={selectedCertificate.courseName}
+                  instructorName={selectedCertificate.instructorName}
+                  completionDate={format(new Date(selectedCertificate.issuedAt), 'MMMM d, yyyy')}
+                  certificateNumber={selectedCertificate.certificateNumber}
+                />
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
   );
 }

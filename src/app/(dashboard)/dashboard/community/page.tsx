@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { mockCommunityPosts, mockComments } from '@/lib/mock-data/features';
 import { PostCard, type PostCardProps } from '@/components/dashboard/community/PostCard';
 import type { Comment } from '@/components/dashboard/community/CommentSection';
@@ -165,8 +165,7 @@ export default function CommunityPage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -270,6 +269,5 @@ export default function CommunityPage() {
           ))}
         </div>
       </div>
-    </DashboardLayout>
   );
 }

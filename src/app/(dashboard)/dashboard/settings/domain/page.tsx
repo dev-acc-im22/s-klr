@@ -1,7 +1,7 @@
 'use client'
 
 import { useGhostMode } from '@/hooks/useGhostMode'
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout'
+
 import { DomainManager } from '@/components/dashboard/domains'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -13,8 +13,7 @@ export default function DomainSettingsPage() {
   const { isGhostMode } = useGhostMode()
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
         {/* Back button */}
         <Link href="/dashboard/settings">
           <Button variant="ghost" size="sm" className="mb-2">
@@ -110,6 +109,5 @@ export default function DomainSettingsPage() {
           </CardContent>
         </Card>
       </div>
-    </DashboardLayout>
   )
 }

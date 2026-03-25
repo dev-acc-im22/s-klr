@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { useGhostMode } from '@/hooks/useGhostMode';
 import {
   mockAnalytics,
@@ -68,8 +68,7 @@ export default function AnalyticsPage() {
   const overview = analytics.overview;
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -267,6 +266,5 @@ export default function AnalyticsPage() {
           </CardContent>
         </Card>
       </div>
-    </DashboardLayout>
   );
 }

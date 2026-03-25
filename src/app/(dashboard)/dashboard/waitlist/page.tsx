@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Users, BarChart3, List, Settings } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { WaitlistStats, WaitlistList, LaunchSettings } from '@/components/dashboard/waitlist';
 import { useGhostMode } from '@/hooks/useGhostMode';
 
@@ -13,8 +13,7 @@ export default function WaitlistPage() {
   const [activeTab, setActiveTab] = useState('overview');
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Waitlist</h1>
@@ -119,6 +118,5 @@ export default function WaitlistPage() {
           </TabsContent>
         </Tabs>
       </div>
-    </DashboardLayout>
   );
 }

@@ -28,7 +28,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 
 const triggerTypes = [
   { value: 'NEW_FOLLOWER', label: 'New Follower', description: 'Send DM when someone follows you', icon: Users },
@@ -124,17 +124,14 @@ export default function EditInstagramAutomationPage({ params }: { params: Promis
 
   if (loading) {
     return (
-      <DashboardLayout ghostMode={isGhostMode}>
-        <div className="flex items-center justify-center min-h-[400px]">
-          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        </div>
-      </DashboardLayout>
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
     );
   }
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6 max-w-3xl mx-auto">
+    <div className="space-y-6 max-w-3xl mx-auto">
         {/* Header */}
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" asChild>
@@ -316,6 +313,5 @@ export default function EditInstagramAutomationPage({ params }: { params: Promis
           </div>
         </form>
       </div>
-    </DashboardLayout>
   );
 }

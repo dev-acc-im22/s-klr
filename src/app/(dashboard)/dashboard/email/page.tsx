@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { mockSubscribers, mockCampaigns } from '@/lib/mock-data/email';
 import { format } from 'date-fns';
 
@@ -27,8 +27,7 @@ export default function EmailPage() {
     .reduce((acc, c) => acc + (c.clickCount / c.recipientCount), 0) / mockCampaigns.filter(c => c.status === 'SENT').length * 100;
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -348,6 +347,5 @@ export default function EmailPage() {
         </TabsContent>
       </Tabs>
       </div>
-    </DashboardLayout>
   );
 }

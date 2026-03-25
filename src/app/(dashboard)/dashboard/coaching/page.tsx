@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { mockCoachingPackages, mockCoachingSessions } from '@/lib/mock-data/features';
 import { format } from 'date-fns';
 
@@ -32,8 +32,7 @@ export default function CoachingPage() {
   );
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -223,6 +222,5 @@ export default function CoachingPage() {
         </TabsContent>
       </Tabs>
       </div>
-    </DashboardLayout>
   );
 }

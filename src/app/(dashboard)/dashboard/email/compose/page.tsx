@@ -30,7 +30,7 @@ import { Separator } from '@/components/ui/separator';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar as CalendarComponent } from '@/components/ui/calendar';
 import { useGhostMode } from '@/hooks/useGhostMode';
-import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
+
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 
@@ -201,8 +201,7 @@ export default function EmailComposePage() {
   };
 
   return (
-    <DashboardLayout ghostMode={isGhostMode}>
-      <div className="space-y-6">
+    <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" asChild>
@@ -566,6 +565,5 @@ Variables: {first_name}, {last_name}, {unsubscribe_link}"
           </div>
         </div>
       </div>
-    </DashboardLayout>
   );
 }
